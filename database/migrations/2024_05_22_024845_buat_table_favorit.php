@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('akun', function (Blueprint $table){
-            $table -> id('id_akun');
-            $table -> string('username');
-            $table ->  string('password');
+        Schema::create('favorit', function(Blueprint $table ){
+            $table -> id() -> primary()-> unique();
+            $table -> integer('id_makanan');
+            $table -> unsignedBigInteger('id_akun');
+            $table -> foreign('id_akun') -> references('id_akun')-> on('akun');
+
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('akun');
+        Schema::dropIfExists('favorite');
     }
 };
