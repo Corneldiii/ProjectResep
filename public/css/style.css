@@ -19,3 +19,13 @@ body{
     border-radius: 20px;
     object-fit: contain;
 }
+
+#carouselExampleIndicators {
+    height: 400px; /* Sesuaikan tinggi sesuai kebutuhan Anda */
+}
+
+.carousel-item {
+    transition: opacity 1s ease-in-out;
+}
+
+  
