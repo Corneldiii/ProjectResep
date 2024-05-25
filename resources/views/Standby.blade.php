@@ -82,31 +82,48 @@
 
 
 
-    <!-- Artikel  1 -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h2>Judul Artikel</h2>
-                <p>Isi artikel Anda disini...</p>
-            </div>
-            <div class="col-md-4">
-                <!-- Sidebar atau ruang untuk elemen lainnya -->
-            </div>
+     <!-- Artikel Section -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <img src="/img/artikel_1_standby.png" class="card-img-top" alt="Article Image">
+          <div class="card-body">
+            <h5 class="card-title">Cari dan temukan resep dari Kuresep Masak</h5>
+          </div>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Temukan lebih dari 100 Resep makanan dari pulau Jawa</h5>
+            <p class="card-text">Mulai dari manisnya makan Jogja </p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Artikel  1 -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h2>Judul Artikel</h2>
-                <p>Isi artikel Anda disini...</p>
-            </div>
-            <div class="col-md-4">
-                <!-- Sidebar atau ruang untuk elemen lainnya -->
-            </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Article Image">
+          <div class="card-body">
+            <h5 class="card-title">Judul Artikel 2</h5>
+            <p class="card-text">Isi artikel Anda disini...</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Sidebar Title</h5>
+            <p class="card-text">Content for the sidebar goes here...</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
