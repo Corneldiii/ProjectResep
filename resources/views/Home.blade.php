@@ -17,10 +17,10 @@
 <body>
 
     {{-- navbar started  --}}
-    <nav class="navbar navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-light bg-light fixed-top shadow p-1 mb-5 bg-white rounded">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 50px" alt="">
+                <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 30px" alt="">
                 <h5 class="mx-3">kuresep masak</h5>
             </a>
 
