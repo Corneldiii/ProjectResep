@@ -50,7 +50,7 @@
   <section class="pembukaan d-flex justify-content-center align-items-center mt-4 p-3">
   <div id="carouselExampleIndicators" class="carousel slide mt-5 container" data-bs-ride="carousel">
     <!-- Carousel Indicators -->
-    <div class="carousel-indicators">
+    <div class="carousel-indicators m-1">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
