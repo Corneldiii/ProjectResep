@@ -28,4 +28,24 @@ body{
     transition: opacity 1s ease-in-out;
 }
 
-  
+.footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+}
+
+.footer .footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer .footer-links a {
+    color: #6c757d;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer .footer-links a:hover {
+    text-decoration: underline;
+}

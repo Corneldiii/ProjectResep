@@ -11,7 +11,7 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
 
-    <title>Hello, world!</title>
+    <title>Kuresep Masak </title>
 </head>
 
 <body>
@@ -82,59 +82,125 @@
 
 
 
-     <!-- Artikel Section -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="card mb-4">
-          <img src="/img/artikel_1_standby.png" class="card-img-top" alt="Article Image">
-          <div class="card-body">
-            <h5 class="card-title">Cari dan temukan resep dari Kuresep Masak</h5>
-          </div>
+    <!-- Artikel Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <img src="/img/artikel_1_standby.png" class="card-img-top" alt="Article Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Cari dan temukan resep dari Kuresep Masak</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Temukan lebih dari 100 Resep makanan dari pulau Jawa</h5>
+                        <p class="card-text">Mulai dari manisnya makan Jogja , Gurihnya makan Jawa tengah, hingga
+                            Pedasnya makan Jawa Barat.</p>
+                        <p class="card-text"> Dengan memiliki jumlah 100 lebih resep masakan Khas pulau jawa mulai dari
+                            makanan berat hingga makan ringan khas pulau jawa.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Temukan lebih dari 100 Resep makanan dari pulau Jawa</h5>
-            <p class="card-text">Mulai dari manisnya makan Jogja </p>
-          </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Simpan Resep kesukaan dan favorit</h5>
+                        <p class="card-text">Melalui fitur Simpan resep, anda dapat menyimpan resep untuk dimasak.</p>
+                        <p class="card-text">Dengan Web gratis Kuresep Masak, anda dapat menyimpan dan mengelola resep
+                            dengan lebih mudah.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Article Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Simpan Resep langsung di Web</h5>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <img src="" class="card-img-top" alt="Article Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Bagikan resepmu di Kuresep Masak </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Bagikan Resep makanan dari masakanmu</h5>
+                        <p class="card-text">Abadikan dan membagikan pengalaman memasak maupun resep dengan
+                            menuliskannya di Kuresep Masak.</p>
+                        <p class="card-text"> Bagikan resepmu dengan Web Kuresep Masak Gratis!.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="row">
-      <div class="col-md-8">
-        <div class="card mb-4">
-          <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Article Image">
-          <div class="card-body">
-            <h5 class="card-title">Judul Artikel 2</h5>
-            <p class="card-text">Isi artikel Anda disini...</p>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="footer-title">About Kuresep Masak</h5>
+                    <p>Kuresep Masak membuat masak sehari-hari makin menyenangkan dan mudah, karena dengan menyediakan lebih dari 100 resep masakan khas pulau jawa pada Web Kami.
+                         Kami mendukung koki rumahan di seluruh Indonesia untuk membantu satu sama lain dengan
+                        berbagi resep dan tips memasak.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Media Sosial</h5>
+                    <div class="footer-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <address>
+                        1234 Street Name<br>
+                        City, State, 56789<br>
+                        Email: info@example.com<br>
+                        Phone: (123) 456-7890
+                    </address>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p class="text-muted">&copy; 2024 Kuresep Masak. Kreativitas Tanpa Batas di Dapur.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Sidebar Title</h5>
-            <p class="card-text">Content for the sidebar goes here...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    </footer>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
-    </script>
-
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
