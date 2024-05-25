@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\akun;
 use Illuminate\Http\Request;
 
-class AkunController extends Controller
+class StandByController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('/login');
+        return view('/Standby');
     }
 
     /**
@@ -34,7 +33,7 @@ class AkunController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(akun $akun)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +41,7 @@ class AkunController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(akun $akun)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +49,7 @@ class AkunController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, akun $akun)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,23 +57,8 @@ class AkunController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(akun $akun)
+    public function destroy(string $id)
     {
         //
-    }
-
-    public function login(Request $request)
-    {
-        $credentials = $request->only('username', 'password', 'id_akun');
-
-
-        $user = akun::where('username', $credentials['username'])->first();
-
-        if ($user && password_verify($credentials['password'], $user->password)) {
-            $request->session()->put('id_akun', $user->id_akun);
-            return redirect('/Home');
-        } else {
-            dd($user);
-        }
     }
 }
