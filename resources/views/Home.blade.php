@@ -17,7 +17,7 @@
 <body>
 
     {{-- navbar started --}}
-    <nav class="navbar navbar-light bg-light mb-3">
+    <nav class="navbar navbar-light shadow bg-light mb-3">
         <div class="container-fluid ">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 35px" alt="">
@@ -92,157 +92,45 @@
         <div class="row">
             <h1>Rekomendasi resep</h1>
         </div>
-        <div class="row row-cols-md-3 mt-3 ">
-            <div class="col-sm mt-4">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100 overflow-hidden ">
-                        <div class="row ">
+        <div class="row row-cols-md-3 mt-3 mb-3">
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
 
-                            <div class="col-8">
-                                <h6 class="card-title d-flex justify-content-center align-item-center">Makanan Khas Jawa
-                                    Tengah</h6>
-                                <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                    {{ Str::limit(
-                                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium
-                                                                        temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut,
-                                                                        esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!',
-                                        100,
-                                    ) }}
-                                </p>
-                            </div>
 
-                            <div class="col-4">
-                                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm mt-4">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100 overflow-hidden ">
-                        <div class="row ">
-
-                            <div class="col-8">
-                                <h6 class="card-title d-flex justify-content-center align-item-center">Makanan Khas Jawa
-                                    Tengah</h6>
-                                <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                    {{ Str::limit(
-                                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium
-                                                                        temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut,
-                                                                        esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!',
-                                        100,
-                                    ) }}
-                                </p>
-                            </div>
-
-                            <div class="col-4">
-                                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm mt-4">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100 overflow-hidden ">
-                        <div class="row ">
-
-                            <div class="col-8">
-                                <h6 class="card-title d-flex justify-content-center align-item-center">Makanan Khas Jawa
-                                    Tengah</h6>
-                                <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                    {{ Str::limit(
-                                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium
-                                                                        temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut,
-                                                                        esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!',
-                                        100,
-                                    ) }}
-                                </p>
-                            </div>
-
-                            <div class="col-4">
-                                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm mt-4">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100 overflow-hidden ">
-                        <div class="row ">
-
-                            <div class="col-8">
-                                <h6 class="card-title d-flex justify-content-center align-item-center">Makanan Khas Jawa
-                                    Tengah</h6>
-                                <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                    {{ Str::limit(
-                                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium
-                                                                        temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut,
-                                                                        esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!',
-                                        100,
-                                    ) }}
-                                </p>
-                            </div>
-
-                            <div class="col-4">
-                                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm mt-4">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100 overflow-hidden ">
-                        <div class="row ">
-
-                            <div class="col-8">
-                                <h6 class="card-title d-flex justify-content-center align-item-center">Makanan Khas Jawa
-                                    Tengah</h6>
-                                <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                    {{ Str::limit(
-                                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium
-                                                                        temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut,
-                                                                        esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!',
-                                        100,
-                                    ) }}
-                                </p>
-                            </div>
-
-                            <div class="col-4">
-                                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm mt-4">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100 overflow-hidden ">
-                        <div class="row ">
-
-                            <div class="col-8">
-                                <h6 class="card-title d-flex justify-content-center align-item-center">Makanan Khas Jawa
-                                    Tengah</h6>
-                                <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                    {{ Str::limit(
-                                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium
-                                                                        temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut,
-                                                                        esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!',
-                                        100,
-                                    ) }}
-                                </p>
-                            </div>
-
-                            <div class="col-4">
-                                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
         </div>
     </section>
