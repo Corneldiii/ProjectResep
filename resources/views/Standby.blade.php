@@ -143,7 +143,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-light">
+    <footer class="footer mt-auto py-3 bg-dark text-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
