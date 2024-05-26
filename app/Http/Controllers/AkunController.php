@@ -72,7 +72,7 @@ class AkunController extends Controller
 
         if ($user && password_verify($credentials['password'], $user->password)) {
             $request->session()->put('id_akun', $user->id_akun);
-            return redirect()->route('standby');
+            return redirect()->route('home');
         } else {
             dd($user);
         }

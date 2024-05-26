@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class InputResepController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('/Home');
+        return view('/TambahMenu');
     }
 
     /**

@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-1 mb-5 bg-white rounded">
         <div class="container">
-            <img src="/img/Logo_remove.png" alt="Logo" style="width: 80px; height: 80px;">
+            <img src="/img/Logo_remove.png" alt="Logo" style="width: 50px;" class="mr-2">
             <a class="navbar-brand" href="{{ route('standby') }}">Kuresep Masak</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
