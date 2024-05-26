@@ -11,17 +11,17 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
 
-    <title>Hello, world!</title>
+    <title>Kuresep masak</title>
 </head>
 
 <body>
 
-    {{-- navbar started  --}}
+    {{-- navbar started --}}
     <nav class="navbar navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 50px" alt="">
-                <h5 class="mx-3">kuresep masak</h5>
+                <h5 class="mx-3">Kuresep masak</h5>
             </a>
 
             <nav class="navbar navbar-light bg-light">
@@ -61,8 +61,8 @@
                             <a class="nav-link" href="#">Favorite</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
@@ -98,8 +98,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src=" {{ asset('/storage/img/makanan/jelajahi.jpg') }} " class="d-block w-100 "
-                        alt="...">
+                    <img src=" {{ asset('/storage/img/makanan/jelajahi.jpg') }} " class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="{{ asset('/storage/img/makanan/resep.jpg') }} " class="d-block w-100" alt="...">
@@ -121,20 +120,116 @@
         </div>
     </section>
 
-    <section>
-        <h5>
-            cek
-        </h5>
+    <!-- Pilihan Menu -->
+    <section class="container mt-5 mb-5">
+        <h1 class="mb-4">Telusuri Berdasarkan</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card h-100">
+                        <img src="{{ asset('/img/soto_standby.png') }}" class="card-img-top" alt="Kategori 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Makanan Khas Jakarta</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card h-100">
+                        <img src="{{ asset('/img/gudeg_standby.png') }}" class="card-img-top" alt="Kategori 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Makanan Khas Jogja</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card h-100">
+                        <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Makanan Khas Jawa Barat</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card h-100">
+                        <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Makanan Khas Jawa Tengah</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card h-100">
+                        <img src="{{ asset('/img/rawon_standby.png') }}" class="card-img-top" alt="Kategori 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Makanan Khas Jawa Timur</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" class="text-decoration-none text-dark">
+                    <div class="card h-100">
+                        <img src="{{ asset('/img/rabeg_standby.png') }}" class="card-img-top" alt="Kategori 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Makanan Khas Banten</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </section>
 
-
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="footer-title">About Kuresep Masak</h5>
+                    <p>Kuresep Masak membuat masak sehari-hari makin menyenangkan dan mudah, karena dengan menyediakan
+                        lebih dari 100 resep masakan khas pulau jawa pada Web Kami.
+                        Kami mendukung koki rumahan di seluruh Indonesia untuk membantu satu sama lain dengan
+                        berbagi resep dan tips memasak.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Media Sosial</h5>
+                    <div class="footer-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <address>
+                        1234 Street Name<br>
+                        City, State, 56789<br>
+                        Email: info@example.com<br>
+                        Phone: (123) 456-7890
+                    </address>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p class="text-muted">&copy; 2024 Kuresep Masak. Kreativitas Tanpa Batas di Dapur.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
