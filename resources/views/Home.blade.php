@@ -17,144 +17,55 @@
 <body>
 
     {{-- navbar started --}}
-    <nav class="navbar navbar-light bg-light mb-3">
-        <div class="container-fluid ">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 35px" alt="">
-                <h5 class="mx-3">Kuresep masak</h5>
-            </a>
-
-            <nav class="navbar navbar-light bg-light">
-                <div class="container-fluid" style="width: 900px">
-                    <form class="d-flex">
-                        <input class="form-control me-2 rounded-pill " style="width: 750px" type="search"
-                            placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success rounded-pill bg-primary text-light" type="submit"
-                            style="width: 150px">Search</button>
-                    </form>
-                </div>
-            </nav>
-
-            <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            {{-- side menu --}}
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <div>
-                        <a class="navbar-brand d-flex align-items-center" href="#">
-                            <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 50px" alt="">
-                            <h5 class="mx-3">kuresep masak</h5>
-                        </a>
-                    </div>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Favorite</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </nav>
+    
+    <x-navbar/>
 
     {{-- section pembukaan --}}
 
-    <section class="container mt-5">
-        <div class="col">
-            <div class="row">
-                <h1>Rekomendasi resep</h1>
-            </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <div class="card h-100">
-                            <img src="{{ asset('/img/soto_standby.png') }}" class="card-img-top" alt="Kategori 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Makanan Khas Jakarta</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <div class="card h-100">
-                            <img src="{{ asset('/img/gudeg_standby.png') }}" class="card-img-top" alt="Kategori 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Makanan Khas Jogja</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <div class="card h-100">
-                            <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Makanan Khas Jawa Barat</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <div class="card h-100">
-                            <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Makanan Khas Jawa Barat</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <div class="card h-100">
-                            <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Makanan Khas Jawa Barat</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <div class="card h-100">
-                            <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Makanan Khas Jawa Barat</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+    <section class="container mt-5 overflow-hidden">
+        <div class="row">
+            <h1>Rekomendasi resep</h1>
+        </div>
+        <div class="row row-cols-md-3 mt-3 mb-3">
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+            <x-card-food
+                title="Makanan Khas Jawa Tengah"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
+                image="/img/tempe_standby.png"
+                alt="Kategori 4"
+            />
+
+
+
         </div>
     </section>
 
