@@ -19,6 +19,8 @@ Route::post('/login', [AkunController::class, 'login']);
 
 Route::get('/SignUp',[SignupController::class, 'index'])->name('signup');
 
+Route::post('/SignUp',[SignupController::class, 'store'])->name('signup_post');
+
 Route::get('/home',[SignupController::class, 'index'])->name('home');
 
 Route::get('/standby', [StandByController::class, 'index'])->name('standby');
