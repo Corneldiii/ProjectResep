@@ -48,7 +48,7 @@
         <form action="{{ route('login') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Username</label>
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="form-group">
@@ -58,7 +58,7 @@
             <button type="submit" class="btn btn-primary btn-block">Login</button>
         </form>
         <div class="text-center mt-3">
-            <p>Don't have an account? <a href="{{ route('signup') }}">Sign up</a></p>
+            <p>Tidak Punya Akun? <a href="{{ route('signup') }}">Sign up</a></p>
         </div>
     </div>
 
