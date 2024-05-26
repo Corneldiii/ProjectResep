@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\resep;
 use Illuminate\Http\Request;
 
 class InputResepController extends Controller
@@ -27,7 +28,49 @@ class InputResepController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required|min:1|max:50',
+            'asal' => 'required|min:1|max:50',
+            'bahan' => 'required|min:10|max:255',
+            'langkah' => 'required|min:10|max:255',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+
+        $id_akun = $request->session()->get('id_akun');
+
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+            $fotoName = time() . '.' . $foto->getClientOriginalExtension();
+            $fotoPath = 'img/resepku/' . $fotoName;
+
+            // Buat direktori jika belum ada
+            if (!file_exists(public_path('img/resepku'))) {
+                mkdir(public_path('img/resepku'), 0777, true);
+            }
+
+            // Pindahkan file ke direktori yang diinginkan
+            $foto->move(public_path('img/resepku'), $fotoName);
+        } else {
+            $fotoPath = null;
+        }
+
+        
+
+
+        $data = [
+            'nama' => $request->input('nama'),
+            'asal' => $request->input('asal'),
+            'bahan' => $request->input('bahan'),
+            'langkah' => $request->input('langkah'),
+            'foto' => $fotoPath,
+            'user_id' => $id_akun,
+        ];
+
+        // dd($data);
+
+        resep::create($data);
+        return redirect()->route('inputresep');
     }
 
     /**

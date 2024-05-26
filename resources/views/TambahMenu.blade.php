@@ -37,27 +37,27 @@
 
             <div class="container mt-5 ">
                 <h2>Submit Your Recipe</h2>
-                <form action="{{ route('inputresep') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('inputresep_post') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mb-3">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control" id="name" name="nama" required>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="origin">Origin</label>
-                        <input type="text" class="form-control" id="origin" name="origin" required>
+                        <label for="origin">Asal</label>
+                        <input type="text" class="form-control" id="origin" name="asal" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="ingredients">Ingredients</label>
-                        <textarea class="form-control" id="ingredients" name="ingredients" rows="4" required></textarea>
+                        <textarea class="form-control" id="ingredients" name="bahan" rows="4" required></textarea>
                     </div>
                     <div class="form-group mb-3">
                         <label for="steps">Steps</label>
-                        <textarea class="form-control" id="steps" name="steps" rows="4" required></textarea>
+                        <textarea class="form-control" id="steps" name="langkah" rows="4" required></textarea>
                     </div>
                     <div class="form-group mb-3">
                         <label for="image">Upload Image</label>
-                        <input type="file" class="form-control-file" id="image" name="image" required>
+                        <input type="file" class="form-control-file" id="image" name="foto" required>
                     </div>
                     <button type="submit" class="btn btn-primary ">Submit</button>
                 </form>

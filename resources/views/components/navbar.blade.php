@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light shadow bg-light mb-3">
     <div class="container-fluid ">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <a class="navbar-brand d-flex align-items-center" href="{{ route('home')  }}">
             <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 35px" alt="">
             <h5 class="mx-3">Kuresep masak</h5>
         </a>
@@ -49,12 +49,11 @@
                             Dropdown
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="{{ route('inputresep')  }}">Tambahkan menu kreasimu</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">logout</a></li>
                         </ul>
                     </li>
                 </ul>
