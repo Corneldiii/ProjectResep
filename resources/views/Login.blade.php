@@ -45,20 +45,34 @@
     </div>
     <div class="login-container">
         <h2 class="text-center">Login</h2>
-        <form action="" method='POST'>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="form-group">
-                <label for="email">Username</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                    placeholder="Enter username" name="username">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Login</button>
         </form>
         <div class="text-center mt-3">
-            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            <p>Don't have an account? <a href="{{ route('signup') }}">Sign up</a></p>
         </div>
     </div>
 
