@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\akun;
 use Illuminate\Http\Request;
 
 class SignupController extends Controller
@@ -27,7 +28,22 @@ class SignupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email' => 'required|max:255',
+            'password' => 'required|min:8|max:12',
+            'password_confirmation' => 'required|max:12|min:8|same:password',
+        ]);
+
+        $data = [
+            'username' => $request-> input('email'),
+            'password' => bcrypt($request-> input('password')),
+        ];
+
+        // dd($data);
+
+        akun::create($data);
+        return redirect()->route('login');
+
     }
 
     /**
@@ -61,24 +77,4 @@ class SignupController extends Controller
     {
         //
     }
-
-    // public function register(Request $request)
-    // {
-    //     // Validasi data yang diterima dari form pendaftaran
-    //     $request->validate([
-    //         'name' => 'required|string|max:255',
-    //         'email' => 'required|string|email|max:255|unique:users',
-    //         'password' => 'required|string|min:8|confirmed',
-    //     ]);
-
-    //     // Membuat user baru dengan data yang telah diverifikasi
-    //     $user = new User();
-    //     $user->name = $request->name;
-    //     $user->email = $request->email;
-    //     $user->password = Hash::make($request->password);
-    //     $user->save(); // Simpan user ke database
-
-    //     // Redirect ke halaman login dengan pesan sukses
-    //     return redirect()->route('login')->with('success', 'Pendaftaran berhasil! Silakan masuk.');
-    // }
 }

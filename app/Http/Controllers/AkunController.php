@@ -65,14 +65,14 @@ class AkunController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('username', 'password', 'id_akun');
+        $credentials = $request->only('email', 'password', 'id_akun');
 
 
-        $user = akun::where('username', $credentials['username'])->first();
+        $user = akun::where('username', $credentials['email'])->first();
 
         if ($user && password_verify($credentials['password'], $user->password)) {
             $request->session()->put('id_akun', $user->id_akun);
-            return redirect('/Home');
+            return redirect()->route('standby');
         } else {
             dd($user);
         }
