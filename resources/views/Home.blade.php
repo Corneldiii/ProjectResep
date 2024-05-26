@@ -17,23 +17,25 @@
 <body>
 
     {{-- navbar started --}}
-    <nav class="navbar navbar-light bg-light fixed-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-light bg-light mb-3">
+        <div class="container-fluid ">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 50px" alt="">
+                <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 35px" alt="">
                 <h5 class="mx-3">Kuresep masak</h5>
             </a>
 
             <nav class="navbar navbar-light bg-light">
-                <div class="container-fluid">
+                <div class="container-fluid" style="width: 900px">
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2 rounded-pill " style="width: 750px" type="search"
+                            placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success rounded-pill bg-primary text-light" type="submit"
+                            style="width: 150px">Search</button>
                     </form>
                 </div>
             </nav>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -61,8 +63,8 @@
                             <a class="nav-link" href="#">Favorite</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
@@ -86,37 +88,73 @@
 
     {{-- section pembukaan --}}
 
-    <section class="pembukaan d-flex justify-content-center align-items-cente mt-4 p-3 ">
-        <div id="carouselExampleIndicators" class="carousel slide mt-5 " data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+    <section class="container mt-5">
+        <div class="col">
+            <div class="row">
+                <h1>Rekomendasi resep</h1>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src=" {{ asset('/storage/img/makanan/jelajahi.jpg') }} " class="d-block w-100 " alt="...">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card h-100">
+                            <img src="{{ asset('/img/soto_standby.png') }}" class="card-img-top" alt="Kategori 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Makanan Khas Jakarta</h5>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('/storage/img/makanan/resep.jpg') }} " class="d-block w-100" alt="...">
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card h-100">
+                            <img src="{{ asset('/img/gudeg_standby.png') }}" class="card-img-top" alt="Kategori 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Makanan Khas Jogja</h5>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('/storage/img/makanan/nusantara.jpg') }} " class="d-block w-100" alt="...">
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card h-100">
+                            <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Makanan Khas Jawa Barat</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card h-100">
+                            <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Makanan Khas Jawa Barat</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card h-100">
+                            <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Makanan Khas Jawa Barat</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card h-100">
+                            <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Makanan Khas Jawa Barat</h5>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </section>
 
@@ -124,36 +162,7 @@
     <section class="container mt-5 mb-5">
         <h1 class="mb-4">Telusuri Berdasarkan</h1>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{{ asset('/img/soto_standby.png') }}" class="card-img-top" alt="Kategori 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Makanan Khas Jakarta</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{{ asset('/img/gudeg_standby.png') }}" class="card-img-top" alt="Kategori 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Makanan Khas Jogja</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{{ asset('/img/seblak_standby.png') }}" class="card-img-top" alt="Kategori 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Makanan Khas Jawa Barat</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
+
             <div class="col">
                 <a href="#" class="text-decoration-none text-dark">
                     <div class="card h-100">
@@ -229,7 +238,7 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
