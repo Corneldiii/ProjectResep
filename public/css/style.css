@@ -30,8 +30,9 @@ body{
 }
 
 footer {
-    background-color: #393d41;
+    background-color: #343a40;
     padding: 40px 0;
+    color: white;
 }
 
 .footer .footer-title {
