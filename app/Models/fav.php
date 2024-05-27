@@ -11,5 +11,5 @@ class fav extends Model
 
     protected $table = "favorit";
 
-    protected $fillable = ["id_resep","id_akun"];
+    protected $fillable = ["id_resep","id_akun","status"];
 }

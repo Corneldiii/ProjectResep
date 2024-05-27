@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\fav;
 use App\Models\resep;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,18 @@ class HomeController extends Controller
     {
         $id_akun = session('id_akun');
 
-        $data = resep::take(6)->get();
+        // $data = resep::take(6)->get();
+
+        $data = DB::table('resep')
+            ->leftJoin('favorit', 'resep.id_resep', '=', 'favorit.id_resep')
+            ->select('resep.*', 'favorit.status')
+            ->take(6)
+            ->get();
+
+        // $data = fav::join('resep', 'favorit.id_resep', '=', 'resep.id_resep')
+        //     ->select('resep.*')
+        //     ->take(6)
+        //     ->get();
         return view('/Home',compact('data'));
     }
 
@@ -36,7 +48,8 @@ class HomeController extends Controller
 
         $data = [
             'id_resep' => $request->input('id_resep'),
-            'id_akun' => $id_akun
+            'id_akun' => $id_akun,
+            'status' => 1
         ];
 
         fav::create($data);

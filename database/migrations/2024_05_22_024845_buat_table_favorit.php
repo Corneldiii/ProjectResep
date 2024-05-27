@@ -15,6 +15,7 @@ return new class extends Migration
             $table -> id('id_fav') -> primary()-> unique();
             $table -> unsignedBigInteger('id_resep');
             $table -> unsignedBigInteger('id_akun');
+            $table -> boolean('status') -> default(0);
 
             $table -> foreign('id_akun') -> references('id_akun')-> on('akun')->onDelete('cascade');
             $table->foreign('id_resep')->references('id_resep')->on('resep')->onDelete('cascade');
