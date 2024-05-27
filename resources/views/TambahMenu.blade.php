@@ -15,7 +15,7 @@
     <style>
         body {
             
-            background: url('img/bg-inputresep.png');
+            background: url('img/InputResep.png');
             background-size: cover;
         }
     </style>
@@ -31,7 +31,7 @@
     <section class="d-flex justify-content-center align-item-center m-5">
         <div class="input-resep w-50 shadow p-3 rounded " style="background-color: white">
             <div class="d-flex flex-column justify-content-center align-items-center">
-                <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 80px" alt="">
+            <img src="/img/Logo_remove.png" alt="Logo" style="width: 100px;" class="mr-2">
                 <h5 class="mx-3">Kuresep masak</h5>
             </div>
 
@@ -66,7 +66,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-light">
+    <footer class="footer mt-auto py-3  bg-dark text-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -96,7 +96,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col text-center">
-                    <p class="text-muted">&copy; 2024 Kuresep Masak. Kreativitas Tanpa Batas di Dapur.</p>
+                    <p class="footer-text">&copy; 2024 Kuresep Masak. Kreativitas Tanpa Batas di Dapur.</p>
                 </div>
             </div>
         </div>
