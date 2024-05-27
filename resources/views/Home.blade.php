@@ -12,13 +12,48 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <title>Kuresep masak</title>
+
+    <style>
+        .scroll-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            max-width: 670px;
+        }
+
+        .scroll-container a {
+            display: inline-block;
+        }
+
+        .scroll-container img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Custom scrollbar styles */
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 </head>
 
 <body>
 
     {{-- navbar started --}}
-    
-    <x-navbar/>
+
+    <x-navbar />
 
     {{-- section pembukaan --}}
 
@@ -27,88 +62,48 @@
             <h1>Rekomendasi resep</h1>
         </div>
         <div class="row row-cols-md-3 mt-3 mb-3">
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
+
+            {{-- {{ dd($data) }} --}}
+
+            @foreach ($data as $items)
+
+                <x-card-food title="{{ $items->nama }}"
+                    description="{{ $items->bahan }}"
+                    image="{{ $items->foto  }}" alt="Kategori 4" />
+            @endforeach
 
 
 
         </div>
     </section>
 
-    <!-- Pilihan Menu -->
-    <section class="container mt-5 mb-5">
-        <h1 class="mb-4">Telusuri Berdasarkan</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
-                        <div class="card-body">
-                            <h5 class="card-title">Makanan Khas Jawa Tengah</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{{ asset('/img/rawon_standby.png') }}" class="card-img-top" alt="Kategori 5">
-                        <div class="card-body">
-                            <h5 class="card-title">Makanan Khas Jawa Timur</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{{ asset('/img/rabeg_standby.png') }}" class="card-img-top" alt="Kategori 6">
-                        <div class="card-body">
-                            <h5 class="card-title">Makanan Khas Banten</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
+    <!-- Pilihan kategori -->
+    <section class="container mt-5 mb-5 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="mb-4">Telusuri Berdasarkan Kategori</h1>
+        <div class="scroll-container w-100 d-flex gap-4 mb-1">
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 1">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 2">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 3">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 5">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 6">
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-light">
+    <footer class="footer mt-auto py-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">

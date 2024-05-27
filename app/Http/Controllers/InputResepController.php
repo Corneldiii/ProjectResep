@@ -31,8 +31,8 @@ class InputResepController extends Controller
         $request->validate([
             'nama' => 'required|min:1|max:50',
             'asal' => 'required|min:1|max:50',
-            'bahan' => 'required|min:10|max:255',
-            'langkah' => 'required|min:10|max:255',
+            'bahan' => 'required|min:10',
+            'langkah' => 'required|min:10',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
         ]);

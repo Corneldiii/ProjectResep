@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\resep;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +12,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('/Home');
+        $data = resep::take(6)->get();
+
+        return view('/Home',compact('data'));
     }
 
     /**
