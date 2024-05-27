@@ -5,7 +5,7 @@
                 <div class="col-8">
                     <h6 class="card-title d-flex justify-content-center align-items-center">{{ $title }}</h6>
                     <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                        {{ Str::limit($description, 100) }}
+                        {{ Str::limit($description, 80) }}
                     </p>
                 </div>
                 <div class="col-4">
