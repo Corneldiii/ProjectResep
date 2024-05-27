@@ -18,8 +18,8 @@ Route::get('/', function () {
 Route::get('/t', function () {
     return view('TambahMenu');
 });
-Route::get('/resep', function () {
-    return view('resep');
+Route::get('/search', function () {
+    return view('search');
 });
 
 

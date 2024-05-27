@@ -13,7 +13,7 @@
 
     <title>Kuresep Masak</title>
 </head>
-
+    
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-1 mb-5 bg-white rounded">
