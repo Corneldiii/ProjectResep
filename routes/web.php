@@ -18,6 +18,10 @@ Route::get('/', function () {
 Route::get('/t', function () {
     return view('TambahMenu');
 });
+Route::get('/resep', function () {
+    return view('resep');
+});
+
 
 Route::get('/login', [AkunController::class, 'index'])->name('login');
 
