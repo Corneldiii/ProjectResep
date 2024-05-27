@@ -29,9 +29,12 @@ Route::post('/SignUp',[SignupController::class, 'store'])->name('signup_post');
 
 Route::get('/home',[HomeController::class, 'index'])->name('home');
 
+Route::post('/home',[HomeController::class, 'store'])->name('favpost');
+
 Route::get('/TambahMenu',[InputResepController::class, 'index'])->name('inputresep');
 
 Route::post('/TambahMenu',[InputResepController::class, 'store'])->name('inputresep_post');
 
 Route::get('/standby', [StandByController::class, 'index'])->name('standby');
+
 

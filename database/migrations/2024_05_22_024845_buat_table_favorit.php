@@ -17,7 +17,8 @@ return new class extends Migration
             $table -> unsignedBigInteger('id_akun');
 
             $table -> foreign('id_akun') -> references('id_akun')-> on('akun')->onDelete('cascade');
-            $table->foreign('id_fav')->references('id_resep')->on('resep')->onDelete('cascade');
+            $table->foreign('id_resep')->references('id_resep')->on('resep')->onDelete('cascade');
+            $table -> timestamps();
         });
     }
 
