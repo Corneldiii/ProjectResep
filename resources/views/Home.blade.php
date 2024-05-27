@@ -62,24 +62,15 @@
             <h1>Rekomendasi resep</h1>
         </div>
         <div class="row row-cols-md-3 mt-3 mb-3">
-            <x-card-food title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png" alt="Kategori 4" />
-            <x-card-food title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png" alt="Kategori 4" />
-            <x-card-food title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png" alt="Kategori 4" />
-            <x-card-food title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png" alt="Kategori 4" />
-            <x-card-food title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png" alt="Kategori 4" />
-            <x-card-food title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png" alt="Kategori 4" />
+
+            {{-- {{ dd($data) }} --}}
+
+            @foreach ($data as $items)
+
+                <x-card-food title="{{ $items->nama }}"
+                    description="{{ $items->bahan }}"
+                    image="{{ $items->foto  }}" alt="Kategori 4" />
+            @endforeach
 
 
 
