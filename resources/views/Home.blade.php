@@ -12,13 +12,48 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <title>Kuresep masak</title>
+
+    <style>
+        .scroll-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            max-width: 670px;
+        }
+
+        .scroll-container a {
+            display: inline-block;
+        }
+
+        .scroll-container img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Custom scrollbar styles */
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 </head>
 
 <body>
 
     {{-- navbar started --}}
-    
-    <x-navbar/>
+
+    <x-navbar />
 
     {{-- section pembukaan --}}
 
@@ -27,88 +62,98 @@
             <h1>Rekomendasi resep</h1>
         </div>
         <div class="row row-cols-md-3 mt-3 mb-3">
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
-            <x-card-food
-                title="Makanan Khas Jawa Tengah"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, libero in? Accusantium temporibus alias reprehenderit omnis dolorum modi officiis aut quaerat impedit ut, esse voluptate dolorem, voluptatum obcaecati tenetur ipsum!"
-                image="/img/tempe_standby.png"
-                alt="Kategori 4"
-            />
+
+
+            @foreach ($data as $items)
+                {{-- {{ dd($items) }} --}}
+                <div class="col-sm mt-4">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card h-100 overflow-hidden shadow">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h6 class="card-title d-flex justify-content-center align-items-center">
+                                        {{ $items->nama }}</h6>
+                                    <p class="text-sm-left m-2" style="font-size: 0.8rem;">
+                                        {{ Str::limit($items->bahan, 50) }}
+                                    </p>
+                                    <a href="">
+                                        <p class="text-sm-left m-2" style="font-size: 0.8rem;">selengkapnya>></p>
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <img src="{{ $items->foto }}" class="card-img-top">
+                                    <form action="{{ route('favpost') }}" method="POST"
+                                        class="position-absolute top-0 end-0 m-1">
+                                        @csrf
+                                        @if ($items->status == 0)
+                                            <input type="hidden" name="id_resep" value="{{ $items->id_resep }}">
+                                            <button type="submit"
+                                                style="border: none; background: none; padding: 0; cursor: pointer;"
+                                                name="fav">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="white" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                                                </svg>
+                                            </button>
+                                        @endif
+                                        @if ($items->status == 1)
+                                            <input type="hidden" name="id_resep" value="{{ $items->id_resep }}">
+                                            <button type="submit"
+                                                style="border: none; background: none; padding: 0; cursor: pointer;"
+                                                name="fav">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="white" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                                                </svg>
+                                            </button>
+                                        @endif
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
 
 
 
         </div>
     </section>
 
-    <!-- Pilihan Menu -->
-    <section class="container mt-5 mb-5">
-        <h1 class="mb-4">Telusuri Berdasarkan</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{{ asset('/img/tempe_standby.png') }}" class="card-img-top" alt="Kategori 4">
-                        <div class="card-body">
-                            <h5 class="card-title">Makanan Khas Jawa Tengah</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{{ asset('/img/rawon_standby.png') }}" class="card-img-top" alt="Kategori 5">
-                        <div class="card-body">
-                            <h5 class="card-title">Makanan Khas Jawa Timur</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{{ asset('/img/rabeg_standby.png') }}" class="card-img-top" alt="Kategori 6">
-                        <div class="card-body">
-                            <h5 class="card-title">Makanan Khas Banten</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
+    <!-- Pilihan kategori -->
+    <section class="container mt-5 mb-5 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="mb-4">Telusuri Berdasarkan Kategori</h1>
+        <div class="scroll-container w-100 d-flex gap-4 mb-1">
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/Kategori/KG_jakarta.png') }}" class="card-img-top" alt="Kategori 1">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/Kategori/KG_jabar.png') }}" class="card-img-top" alt="Kategori 2">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/Kategori/KG_jateng.png') }}" class="card-img-top" alt="Kategori 3">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/Kategori/KG_banten.png') }}" class="card-img-top" alt="Kategori 4">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/Kategori/KG_jatim.png') }}" class="card-img-top" alt="Kategori 5">
+            </a>
+            <a href="#" class="text-decoration-none text-dark">
+                <img src="{{ asset('/img/Kategori/KG_jogja.png') }}" class="card-img-top" alt="Kategori 6">
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-light">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#343a40" fill-opacity="1"
+            d="M0,128L48,144C96,160,192,192,288,213.3C384,235,480,245,576,213.3C672,181,768,107,864,106.7C960,107,1056,181,1152,176C1248,171,1344,85,1392,42.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+    </svg>
+    <footer class="footer mt-auto py-3 ">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">

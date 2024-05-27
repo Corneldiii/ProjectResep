@@ -4,6 +4,7 @@ html{
     padding: 0;
 }
 
+
 body{
     background-color: rgb(255, 255, 255);
 }
@@ -28,9 +29,10 @@ body{
     transition: opacity 1s ease-in-out;
 }
 
-.footer {
-    background-color: #393d41;
+footer {
+    background-color: #343a40;
     padding: 40px 0;
+    color: white;
 }
 
 .footer .footer-title {
