@@ -15,11 +15,11 @@ class resep extends Model
 
     public function favoritedByUsers()
     {
-        return $this->belongsToMany(User::class, 'favorites');
+        return $this->belongsToMany(akun::class, 'id_akun','user_id');
     }
 
     public function submittedByUser()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(fav::class, 'user_id');
     }
 }
