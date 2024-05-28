@@ -12,16 +12,16 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-end;
+            align-items: flex-end; /* Tetap berada di sebelah kanan */
             height: 100vh;
             background: url('/img/Login_1.png') no-repeat center center fixed;
             background-size: cover;
-            padding-right: 120px;
+            padding-right: 120px; /* Jarak dari tepi kanan */
         }
 
         .logo-container {
             margin-bottom: 20px;
-            margin-right: 70px; /* Adjust this value as needed */
+            margin-right: 70px; /* Sesuaikan jarak dengan kontainer login */
             text-align: center;
         }
 

@@ -11,15 +11,17 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
 
-    <title>Kuresep Masak </title>
+    <title>Kuresep Masak</title>
 </head>
-
+    
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-1 mb-5 bg-white rounded">
         <div class="container">
-            <img src="/img/Logo_remove.png" alt="Logo" style="width: 50px;" class="mr-2">
-            <a class="navbar-brand" href="{{ route('standby') }}">Kuresep Masak</a>
+            <a class="navbar-brand" href="{{ route('standby') }}">
+                <img src="/img/Logo_remove.png" alt="Logo" style="width: 50px;" class="mr-2">
+                Kuresep Masak
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,10 +40,7 @@
         </div>
     </nav>
 
-
-
-    {{-- section pembukaan --}}
-
+    <!-- Section Pembukaan -->
     <section class="pembukaan d-flex justify-content-center align-items-center mt-4 p-3">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -51,13 +50,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('/img/gudeg_standby_1.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('/img/gudeg_standby_1.png') }}" class="d-block w-100 img-fluid" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('/img/soto_standby_1.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('/img/soto_standby_1.png') }}" class="d-block w-100 img-fluid" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('/img/seblak_standby_1.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('/img/seblak_standby_1.png') }}" class="d-block w-100 img-fluid" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
@@ -73,14 +72,12 @@
         </div>
     </section>
 
-
-
     <!-- Artikel Section -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-8">
                 <div class="card mb-4">
-                    <img src="/img/artikel_1_standby.png" class="card-img-top" alt="Article Image">
+                    <img src="/img/artikel_1_standby.png" class="card-img-top img-fluid" alt="Article Image">
                     <div class="card-body">
                         <h5 class="card-title">Cari dan temukan resep dari Kuresep Masak</h5>
                     </div>
@@ -92,7 +89,7 @@
                         <h5 class="card-title">Temukan lebih dari 100 Resep makanan dari pulau Jawa</h5>
                         <p class="card-text">Mulai dari manisnya makan Jogja , Gurihnya makan Jawa tengah, hingga
                             Pedasnya makan Jawa Barat.</p>
-                        <p class="card-text"> Dengan memiliki jumlah 100 lebih resep masakan Khas pulau jawa mulai dari
+                        <p class="card-text">Dengan memiliki jumlah 100 lebih resep masakan Khas pulau jawa mulai dari
                             makanan berat hingga makan ringan khas pulau jawa.</p>
                     </div>
                 </div>
@@ -112,7 +109,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card mb-4">
-                    <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Article Image">
+                    <img src="https://via.placeholder.com/800x400" class="card-img-top img-fluid" alt="Article Image">
                     <div class="card-body">
                         <h5 class="card-title">Simpan Resep langsung di Web</h5>
                     </div>
@@ -123,9 +120,9 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card mb-4">
-                    <img src="" class="card-img-top" alt="Article Image">
+                    <img src="" class="card-img-top img-fluid" alt="Article Image">
                     <div class="card-body">
-                        <h5 class="card-title">Bagikan resepmu di Kuresep Masak </h5>
+                        <h5 class="card-title">Bagikan resepmu di Kuresep Masak</h5>
                     </div>
                 </div>
             </div>
@@ -135,12 +132,11 @@
                         <h5 class="card-title">Bagikan Resep makanan dari masakanmu</h5>
                         <p class="card-text">Abadikan dan membagikan pengalaman memasak maupun resep dengan
                             menuliskannya di Kuresep Masak.</p>
-                        <p class="card-text"> Bagikan resepmu dengan Web Kuresep Masak Gratis!.</p>
+                        <p class="card-text">Bagikan resepmu dengan Web Kuresep Masak Gratis!.</p>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Footer -->
@@ -190,28 +186,16 @@
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
-    </script>
-    -->
 </body>
 
 </html>

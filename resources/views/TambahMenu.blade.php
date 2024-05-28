@@ -28,11 +28,12 @@
 
     <x-navbar />
 
+    
     <section class="d-flex justify-content-center align-item-center m-5">
-        <div class="input-resep w-50 shadow p-3 rounded " style="background-color: white">
+        <div class="input-resep w-100 w-md-50 shadow p-3 rounded" style="background-color: white">
             <div class="d-flex flex-column justify-content-center align-items-center">
-            <img src="/img/Logo_remove.png" alt="Logo" style="width: 100px;" class="mr-2">
-                <h5 class="mx-3">Kuresep masak</h5>
+                <img src="/img/Logo_remove.png" alt="Logo" style="width: 100px;" class="mr-2">
+                <h5 class="mx-3">Kuresep Masak</h5>
             </div>
 
             <div class="container mt-5 ">
