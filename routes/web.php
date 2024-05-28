@@ -15,9 +15,14 @@ Route::get('/', function () {
     return view('Standby');
 });
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
 Route::get('/t', function () {
     return view('TambahMenu');
 });
+
 
 Route::get('/login', [AkunController::class, 'index'])->name('login');
 
