@@ -22,6 +22,7 @@ Route::get('/welcome', function () {
 Route::get('/t', function () {
     return view('TambahMenu');
 });
+
 Route::get('/search', function () {
     return view('search');
 });
