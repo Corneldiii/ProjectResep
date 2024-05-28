@@ -1,8 +1,9 @@
 <nav class="navbar navbar-light shadow bg-light mb-3">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-            <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 35px" alt="">
+            <img src="{{ asset('/img/Logo_remove.png') }}" style="width: 35px" alt="">
             <h5 class="mx-3">Kuresep masak</h5>
+            <p>cek</p>
         </a>
 
         <!-- Navbar untuk perangkat besar -->
