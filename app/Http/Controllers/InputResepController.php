@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\daftar_resep;
 use App\Models\resep;
 use Illuminate\Http\Request;
 
@@ -69,7 +70,7 @@ class InputResepController extends Controller
 
         // dd($data);
 
-        resep::create($data);
+        daftar_resep::create($data);
         return redirect()->route('inputresep');
     }
 

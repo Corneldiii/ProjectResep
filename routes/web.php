@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InputResepController;
-use App\Http\Controllers\StandByController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\StandByController;
+use App\Http\Controllers\InputResepController;
+use App\Http\Controllers\DaftarResepController;
 
 Route::get('/Home', function () {
     return view('Home');
@@ -44,6 +45,10 @@ Route::post('/home',[HomeController::class, 'store'])->name('favpost');
 Route::get('/TambahMenu',[InputResepController::class, 'index'])->name('inputresep');
 
 Route::post('/TambahMenu',[InputResepController::class, 'store'])->name('inputresep_post');
+
+Route::get('/HomeAdmin',[DaftarResepController::class, 'store'])->name('daftar_resep');
+
+Route::post('/HomeAdmin',[DaftarResepController::class, 'store'])->name('daftar_resep_post');
 
 Route::get('/standby', [StandByController::class, 'index'])->name('standby');
 
