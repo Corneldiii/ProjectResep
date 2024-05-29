@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\resep;
+use App\Models\daftar_resep;
 use Illuminate\Http\Request;
 
 class DaftarResepController extends Controller
@@ -11,7 +13,9 @@ class DaftarResepController extends Controller
      */
     public function index()
     {
-        //
+
+        $data = daftar_resep::take(6)->get();
+        return view('/HomeAdmin', compact('data'));
     }
 
     /**
@@ -27,7 +31,26 @@ class DaftarResepController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reseps = daftar_resep::all();
+
+        $id_akun = $request->session()->get('id_akun');
+
+        foreach ($reseps as $resep) {
+            if($resep -> status_daftar === 0){
+                $data = [
+                    'nama' => $resep -> nama,
+                    'asal' => $resep -> asal,
+                    'bahan' => $resep -> bahan,
+                    'langkah' => $resep -> langkah,
+                    'foto' => $resep -> foto,
+                    'user_id' => $id_akun,
+                ];
+            }
+
+            resep::create($data);
+        }
+
+        return redirect()->route('homeadmin');
     }
 
     /**

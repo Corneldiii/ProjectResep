@@ -70,7 +70,11 @@ class InputResepController extends Controller
 
         // dd($data);
 
-        daftar_resep::create($data);
+        if($id_akun === 1){
+            resep::create($data);
+        }else{
+            daftar_resep::create($data);
+        }
         return redirect()->route('inputresep');
     }
 

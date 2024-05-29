@@ -14,102 +14,177 @@
     <title>Kuresep masak</title>
 
     <style>
-        .scroll-container {
-            overflow-x: auto;
-            white-space: nowrap;
-            max-width: 670px;
-        }
-
-        .scroll-container a {
-            display: inline-block;
-        }
-
-        .scroll-container img {
-            width: 150px;
-            height: auto;
-        }
-
-        /* Custom scrollbar styles */
-        .scroll-container::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .scroll-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        .scroll-container::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 4px;
-        }
-
-        .scroll-container::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
     </style>
+
 </head>
 
 <body>
 
     {{-- navbar started --}}
 
-    <x-navbar />
+    <nav class="navbar navbar-light shadow bg-light mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="{{ route('homeadmin') }}">
+                <img src="{{ asset('/img/Logo_remove.png') }}" style="width: 35px" alt="">
+                <h5 class="mx-3">Kuresep masak</h5>
+            </a>
+
+            <!-- Navbar untuk perangkat besar -->
+            <div class="d-none d-lg-block flex-grow-1">
+                <div class="container-fluid d-flex justify-content-center" style="max-width: 900px;">
+                    <form class="d-flex w-100">
+                        <input class="form-control me-2 rounded-pill" style="flex-grow: 1;" type="search"
+                            placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success rounded-pill bg-primary text-light" type="submit"
+                            style="width: 150px;">Search</button>
+                    </form>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Side menu -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <div>
+                        <a class="navbar-brand d-flex align-items-center" href="#">
+                            <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 50px" alt="">
+                            <h5 class="mx-3">Kuresep masak</h5>
+                        </a>
+                    </div>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Favorite</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('inputresep') }}">Tambahkan menu
+                                        kreasimu</a></li>
+                                <li>
+                                <li><a class="dropdown-item" href="{{ route('homeadmin') }}">Lihat daftar resep</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('standby') }}">logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
 
     {{-- section pembukaan --}}
 
     <section class="container mt-5 overflow-hidden">
         <div class="row">
             <h1>Rekomendasi resep</h1>
+
         </div>
         <div class="row row-cols-md-3 mt-3 mb-3">
-
-
             @foreach ($data as $items)
                 {{-- {{ dd($items) }} --}}
                 <div class="col-sm mt-4">
                     <a href="#" class="text-decoration-none text-dark">
-                        <div class="card h-100 overflow-hidden shadow">
+                        <div class="card overflow-hidden shadow" style="width: 1100px; height: 131px;">
                             <div class="row">
-                                <div class="col-8">
-                                    <h6 class="card-title d-flex justify-content-center align-items-center">
+                                <div class="col-sm">
+                                    <img src="{{ $items->foto }}" class="card-img-top w-75 h-50">
+                                </div>
+                                <div class="col-sm d-flex flex-column justify-content-center align-items-center h-50">
+                                    <h6 class="card-title ">
                                         {{ $items->nama }}</h6>
                                     <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                        {{ Str::limit($items->bahan, 50) }}
+                                        {{ Str::limit($items->bahan, 150) }}
                                     </p>
-                                    <a href="">
-                                        <p class="text-sm-left m-2" style="font-size: 0.8rem;">selengkapnya>></p>
-                                    </a>
+                                    <!-- Button trigger modal -->
+                                    {{-- <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center" style="height: 20px; width:100px; font-size: 0.8rem;" data-toggle="modal"
+                                        data-target="#Modal1">
+                                        see more
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal1" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>cekkk</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save
+                                                        changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> --}}
                                 </div>
-                                <div class="col-4">
-                                    <img src="{{ $items->foto }}" class="card-img-top">
-                                    <form action="{{ route('favpost') }}" method="POST"
-                                        class="position-absolute top-0 end-0 m-1">
-                                        @csrf
-                                        @if ($items->status == 0)
-                                            <input type="hidden" name="id_resep" value="{{ $items->id_resep }}">
-                                            <button type="submit"
-                                                style="border: none; background: none; padding: 0; cursor: pointer;"
-                                                name="fav">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="white" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                <div class="col-sm d-flex justify-content-center align-items-center h-50 gap-4">
+
+                                    @if ($items->status_resep == 1)
+                                        <form action="{{ route('homeadmin_post') }}" method="POST"
+                                            class="d-flex justify-content-center align-items-center ">
+                                            @csrf
+                                            {{-- <input type="hidden" name="id_resep" value="{{ $items->id_resep }}"> --}}
+                                            <button type="submit" style="border: none; background: none; padding: 0;"
+                                                name="accept">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                    fill="yellow" class="bi bi-check-circle-fill"
+                                                    style="cursor: pointer;" viewBox="0 0 16 16">
                                                     <path
-                                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                                </svg>
+
+                                            </button>
+
+                                        </form>
+                                        <form action="{{ route('homeadmin_destroy') }}" method="POST"
+                                            class="d-flex justify-content-center align-items-center">
+                                            @csrf
+                                            <input type="hidden" name="id_resep" value="{{ $items->id_resep }}">
+                                            <button type="submit" style="border: none; background: none; padding: 0;"
+                                                name="decline">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                    style="cursor: pointer;" fill="red"
+                                                    class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
                                                 </svg>
                                             </button>
-                                        @endif
-                                        @if ($items->status == 1)
-                                            <input type="hidden" name="id_resep" value="{{ $items->id_resep }}">
-                                            <button type="submit"
-                                                style="border: none; background: none; padding: 0; cursor: pointer;"
-                                                name="fav">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="white" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
-                                                </svg>
-                                            </button>
-                                        @endif
-                                    </form>
+
+                                        </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -119,31 +194,6 @@
 
 
 
-        </div>
-    </section>
-
-    <!-- Pilihan kategori -->
-    <section class="container mt-5 mb-5 d-flex flex-column justify-content-center align-items-center">
-        <h1 class="mb-4">Telusuri Berdasarkan Kategori</h1>
-        <div class="scroll-container w-100 d-flex gap-4 mb-1">
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jakarta.png') }}" class="card-img-top" alt="Kategori 1">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jabar.png') }}" class="card-img-top" alt="Kategori 2">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jateng.png') }}" class="card-img-top" alt="Kategori 3">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_banten.png') }}" class="card-img-top" alt="Kategori 4">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jatim.png') }}" class="card-img-top" alt="Kategori 5">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jogja.png') }}" class="card-img-top" alt="Kategori 6">
-            </a>
         </div>
     </section>
 
