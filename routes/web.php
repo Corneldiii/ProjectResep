@@ -11,7 +11,7 @@ use App\Http\Controllers\DaftarResepController;
 Route::get('/Home', function () {
     return view('Home');
 });
-Route::get('/Home2', function () {
+Route::get('/HomeAdmin', function () {
     return view('HomeAdmin');
 });
 
@@ -51,9 +51,9 @@ Route::post('/TambahMenu',[InputResepController::class, 'store'])->name('inputre
 
 Route::get('/HomeAdmin',[DaftarResepController::class, 'index'])->name('homeadmin');
 
-Route::post('/HomeAdmin',[DaftarResepController::class, 'store'])->name('homeadmin_post');
+Route::post('/HomeAdmin', [DaftarResepController::class, 'store']) -> name('admin_post');
 
-Route::post('/HomeAdmin',[DaftarResepController::class, 'destroy'])->name('homeadmin_destroy');
+Route::delete('/HomeAdmin', [DaftarResepController::class, 'destroy']) -> name('admin_delete');
 
 Route::get('/standby', [StandByController::class, 'index'])->name('standby');
 

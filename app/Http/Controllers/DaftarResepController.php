@@ -36,18 +36,16 @@ class DaftarResepController extends Controller
         $id_akun = $request->session()->get('id_akun');
 
         foreach ($reseps as $resep) {
-            if($resep -> status_daftar === 0){
-                $data = [
-                    'nama' => $resep -> nama,
-                    'asal' => $resep -> asal,
-                    'bahan' => $resep -> bahan,
-                    'langkah' => $resep -> langkah,
-                    'foto' => $resep -> foto,
-                    'user_id' => $id_akun,
-                ];
-            }
-
+            $data = [
+                'nama' => $resep->nama,
+                'asal' => $resep->asal,
+                'bahan' => $resep->bahan,
+                'langkah' => $resep->langkah,
+                'foto' => $resep->foto,
+                'user_id' => $id_akun,
+            ];
             resep::create($data);
+            $this->destroy($request->input('id_daftar'));
         }
 
         return redirect()->route('homeadmin');
@@ -82,6 +80,7 @@ class DaftarResepController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        daftar_resep::where('id_daftar', $id)->delete();
+        return redirect()->route('homeadmin');
     }
 }

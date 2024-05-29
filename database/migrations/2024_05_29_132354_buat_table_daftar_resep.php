@@ -20,7 +20,6 @@ return new class extends Migration
             $table -> string('foto')-> unique();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id_akun')->on('akun');
-            $table -> boolean('status_resep')-> default(1);
             $table -> timestamps();
         });
     }
