@@ -12,8 +12,36 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <title>Kuresep Masak</title>
+    <style>
+        body {
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 200px; 
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        body::before {
+            left: 0;
+            background-image: url('/img/standby_kiri.png'); /* Replace with your left-side image path */
+        }
+
+        body::after {
+            right: 0;
+            background-image: url('/img/Logo_remove.png'); /* Replace with your right-side image path */
+        }
+    </style>
 </head>
-    
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-1 mb-5 bg-white rounded">
