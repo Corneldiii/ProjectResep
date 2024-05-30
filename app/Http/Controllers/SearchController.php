@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\resep;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
@@ -12,11 +13,28 @@ class SearchController extends Controller
      */
     public function index(Request $request)
     {
+        // dd($request);
+        $id_akun = session('id_akun');
 
-        $cari = $request -> input('cari');
-        $data = resep::where('nama', 'like', '%' . $cari . '%')->get();
+        $cari = $request->input('cari');
 
-        return view('/search',compact('data','cari'));
+        $data = DB::table('resep')
+            ->leftJoin('favorit', function ($join) use ($id_akun) {
+                $join->on('resep.id_resep', '=', 'favorit.id_resep')
+                    ->where('favorit.id_akun', $id_akun);
+            })
+            ->select('resep.*', 'favorit.status')
+            ->where(function ($query) use ($id_akun) {
+                $query->where('favorit.id_akun', $id_akun)
+                    ->orWhereNull('favorit.id_fav');
+            })
+            ->where('resep.nama', 'like', '%' . $cari . '%') // Add this condition within the main where clause
+            ->orWhere('favorit.status', 0)
+            ->get();
+
+
+
+        return view('/search', compact('data', 'cari'));
     }
 
     /**
@@ -65,5 +83,27 @@ class SearchController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        $id_akun = session('id_akun');
+        $cari = $request->input('provinsi');
+
+        $data = DB::table('resep')
+            ->leftJoin('favorit', function ($join) use ($id_akun) {
+                $join->on('resep.id_resep', '=', 'favorit.id_resep')
+                    ->where('favorit.id_akun', $id_akun);
+            })
+            ->select('resep.*', 'favorit.status')
+            ->where(function ($query) use ($id_akun) {
+                $query->where('favorit.id_akun', $id_akun)
+                    ->orWhereNull('favorit.id_fav');
+            })
+            ->where('resep.asal', $cari)
+            ->orWhere('favorit.status', 0)
+            ->get();
+
+        return view('/search', compact('data','cari'));
     }
 }

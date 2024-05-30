@@ -60,3 +60,6 @@ Route::get('/standby', [StandByController::class, 'index'])->name('standby');
 
 Route::get('/search',[SearchController::class, 'index'])->name('search');
 
+Route::post('/search', [SearchController::class, 'search'])->name('search');
+
+
