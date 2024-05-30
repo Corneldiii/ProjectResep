@@ -53,7 +53,7 @@ Route::get('/HomeAdmin',[DaftarResepController::class, 'index'])->name('homeadmi
 
 Route::post('/HomeAdmin', [DaftarResepController::class, 'store']) -> name('admin_post');
 
-Route::delete('/HomeAdmin', [DaftarResepController::class, 'destroy']) -> name('admin_delete');
+Route::delete('/HomeAdmin/{id}', [DaftarResepController::class, 'destroy']) -> name('admin_delete');
 
 Route::get('/standby', [StandByController::class, 'index'])->name('standby');
 

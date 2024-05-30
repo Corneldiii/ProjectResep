@@ -48,7 +48,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">logout</a></li>
+                            <li><a class="dropdown-item" href="{{ route('standby') }}">logout</a></li>
                         </ul>
                     </li>
                 </ul>

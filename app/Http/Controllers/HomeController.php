@@ -18,17 +18,27 @@ class HomeController extends Controller
 
         // $data = resep::take(6)->get();
 
-        $data = DB::table('resep')
-            ->leftJoin('favorit', 'resep.id_resep', '=', 'favorit.id_resep')
-            ->select('resep.*', 'favorit.status')
-            ->take(6)
-            ->get();
-
-        // $data = fav::join('resep', 'favorit.id_resep', '=', 'resep.id_resep')
-        //     ->select('resep.*')
+        // $data = DB::table('resep')
+        //     ->join('favorit', 'resep.id_resep', '=', 'favorit.id_resep')
+        //     ->select('resep.*', 'favorit.status')
+        //     ->where('favorit.id_akun', $id_akun)
         //     ->take(6)
         //     ->get();
-        return view('/Home',compact('data'));
+
+        $data = DB::table('resep')
+            ->leftJoin('favorit', function ($join) use ($id_akun) {
+                $join->on('resep.id_resep', '=', 'favorit.id_resep')
+                    ->where('favorit.id_akun', $id_akun);
+            })
+            ->select('resep.*', 'favorit.status')
+            ->where(function ($query) use ($id_akun) {
+                $query->where('favorit.id_akun', $id_akun) // Memilih resep yang telah difavoritkan oleh pengguna yang sedang masuk
+                    ->orWhereNull('favorit.id_fav'); // Atau resep yang belum difavoritkan oleh pengguna yang sedang masuk
+            })
+            ->orWhere('favorit.status', 0) // Jika difavoritkan oleh pengguna tetapi statusnya 0 (belum difavoritkan), tetap tampilkan
+            ->take(6)
+            ->get();
+        return view('/Home', compact('data'));
     }
 
     /**
