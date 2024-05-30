@@ -8,8 +8,8 @@
         <!-- Navbar untuk perangkat besar -->
         <div class="d-none d-lg-block flex-grow-1">
             <div class="container-fluid d-flex justify-content-center" style="max-width: 900px;">
-                <form class="d-flex w-100">
-                    <input class="form-control me-2 rounded-pill" style="flex-grow: 1;" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex w-100" method="GET" action="{{ route('search') }}">
+                    <input class="form-control me-2 rounded-pill" name="cari" style="flex-grow: 1;" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success rounded-pill bg-primary text-light" type="submit" style="width: 150px;">Search</button>
                 </form>
             </div>

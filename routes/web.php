@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\StandByController;
 use App\Http\Controllers\InputResepController;
@@ -57,4 +58,5 @@ Route::delete('/HomeAdmin/{id}', [DaftarResepController::class, 'destroy']) -> n
 
 Route::get('/standby', [StandByController::class, 'index'])->name('standby');
 
+Route::get('/search',[SearchController::class, 'index'])->name('search');
 
