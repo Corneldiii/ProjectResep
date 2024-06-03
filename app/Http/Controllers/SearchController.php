@@ -2,28 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\fav;
 use App\Models\resep;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class HomeController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        // dd($request);
         $id_akun = session('id_akun');
 
-        // $data = resep::take(6)->get();
-
-        // $data = DB::table('resep')
-        //     ->join('favorit', 'resep.id_resep', '=', 'favorit.id_resep')
-        //     ->select('resep.*', 'favorit.status')
-        //     ->where('favorit.id_akun', $id_akun)
-        //     ->take(6)
-        //     ->get();
+        $cari = $request->input('cari');
 
         $data = DB::table('resep')
             ->leftJoin('favorit', function ($join) use ($id_akun) {
@@ -32,13 +25,16 @@ class HomeController extends Controller
             })
             ->select('resep.*', 'favorit.status')
             ->where(function ($query) use ($id_akun) {
-                $query->where('favorit.id_akun', $id_akun) // Memilih resep yang telah difavoritkan oleh pengguna yang sedang masuk
-                    ->orWhereNull('favorit.id_fav'); // Atau resep yang belum difavoritkan oleh pengguna yang sedang masuk
+                $query->where('favorit.id_akun', $id_akun)
+                    ->orWhereNull('favorit.id_fav');
             })
-            ->orWhere('favorit.status', 0) // Jika difavoritkan oleh pengguna tetapi statusnya 0 (belum difavoritkan), tetap tampilkan
-            ->take(6)
+            ->where('resep.nama', 'like', '%' . $cari . '%') // Add this condition within the main where clause
+            ->orWhere('favorit.status', 0)
             ->get();
-        return view('/Home', compact('data'));
+
+
+
+        return view('/search', compact('data', 'cari'));
     }
 
     /**
@@ -54,16 +50,7 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        $id_akun = $request->session()->get('id_akun');
-
-        $data = [
-            'id_resep' => $request->input('id_resep'),
-            'id_akun' => $id_akun,
-            'status' => 1
-        ];
-
-        fav::create($data);
-        return redirect()->route('home');
+        //
     }
 
     /**
@@ -96,5 +83,27 @@ class HomeController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        $id_akun = session('id_akun');
+        $cari = $request->input('provinsi');
+
+        $data = DB::table('resep')
+            ->leftJoin('favorit', function ($join) use ($id_akun) {
+                $join->on('resep.id_resep', '=', 'favorit.id_resep')
+                    ->where('favorit.id_akun', $id_akun);
+            })
+            ->select('resep.*', 'favorit.status')
+            ->where(function ($query) use ($id_akun) {
+                $query->where('favorit.id_akun', $id_akun)
+                    ->orWhereNull('favorit.id_fav');
+            })
+            ->where('resep.asal','like','%' . $cari . '%')
+            ->orWhere('favorit.status', 0)
+            ->get();
+
+        return view('/search', compact('data','cari'));
     }
 }

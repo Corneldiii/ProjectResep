@@ -1,15 +1,15 @@
 <nav class="navbar navbar-light shadow bg-light mb-3">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-            <img src="{{ asset('storage/img/logo.jpeg') }}" style="width: 35px" alt="">
+            <img src="{{ asset('/img/Logo_remove.png') }}" style="width: 35px" alt="">
             <h5 class="mx-3">Kuresep masak</h5>
         </a>
 
         <!-- Navbar untuk perangkat besar -->
         <div class="d-none d-lg-block flex-grow-1">
             <div class="container-fluid d-flex justify-content-center" style="max-width: 900px;">
-                <form class="d-flex w-100">
-                    <input class="form-control me-2 rounded-pill" style="flex-grow: 1;" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex w-100" method="GET" action="{{ route('search') }}">
+                    <input class="form-control me-2 rounded-pill" name="cari" style="flex-grow: 1;" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success rounded-pill bg-primary text-light" type="submit" style="width: 150px;">Search</button>
                 </form>
             </div>
@@ -48,7 +48,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">logout</a></li>
+                            <li><a class="dropdown-item" href="{{ route('standby') }}">logout</a></li>
                         </ul>
                     </li>
                 </ul>

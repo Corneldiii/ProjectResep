@@ -7,21 +7,24 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-DROP TABLE IF EXISTS `akun`;
-CREATE TABLE `akun` (
-  `id_akun` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+DROP TABLE IF EXISTS `daftarresep`;
+CREATE TABLE `daftarresep` (
+  `id_daftar` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `asal` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bahan` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `langkah` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint unsigned NOT NULL,
+  `status_resep` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_akun`),
-  UNIQUE KEY `akun_username_unique` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`id_daftar`),
+  UNIQUE KEY `daftarresep_foto_unique` (`foto`),
+  KEY `daftarresep_user_id_foreign` (`user_id`),
+  CONSTRAINT `daftarresep_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `akun` (`id_akun`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `akun` (`id_akun`, `username`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'admin123@gmail.com', '$2y$12$zEyrlT1ad4s3/TxlQc63G.pon7V6czxH0q0jENWdQX8c5VipqwD02', '2024-05-26 13:43:31', '2024-05-26 13:43:31');
-INSERT INTO `akun` (`id_akun`, `username`, `password`, `created_at`, `updated_at`) VALUES
-(2, 'user123@gmail.com', '$2y$12$lfaDM4LseTbmSGcWRBxykO.2lCqBJN.R6sfJyO4djUVemqQOIV46K', '2024-05-30 05:23:40', '2024-05-30 05:23:40');
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

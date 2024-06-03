@@ -107,6 +107,7 @@
                                                     <path
                                                         d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
                                                 </svg>
+
                                             </button>
                                         @endif
                                     </form>
@@ -126,26 +127,58 @@
     <section class="container mt-5 mb-5 d-flex flex-column justify-content-center align-items-center">
         <h1 class="mb-4">Telusuri Berdasarkan Kategori</h1>
         <div class="scroll-container w-100 d-flex gap-4 mb-1">
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jakarta.png') }}" class="card-img-top" alt="Kategori 1">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jabar.png') }}" class="card-img-top" alt="Kategori 2">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jateng.png') }}" class="card-img-top" alt="Kategori 3">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_banten.png') }}" class="card-img-top" alt="Kategori 4">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jatim.png') }}" class="card-img-top" alt="Kategori 5">
-            </a>
-            <a href="#" class="text-decoration-none text-dark">
-                <img src="{{ asset('/img/Kategori/KG_jogja.png') }}" class="card-img-top" alt="Kategori 6">
-            </a>
+            <form method="post" action="{{ route('search') }}">
+                @csrf
+                <input type="hidden" name="provinsi" value="Jakarta">
+                <button type="submit" style="border: none; background: none; padding: 0;">
+                    <img src="{{ asset('/img/Kategori/KG_jakarta.png') }}" class="card-img-top" alt="Kategori Jakarta">
+                </button>
+            </form>
+            <form method="post" action="{{ route('search') }}">
+                @csrf
+                <input type="hidden" name="provinsi" value="jawa barat">
+                <button type="submit" style="border: none; background: none; padding: 0;">
+                    <img src="{{ asset('/img/Kategori/KG_jabar.png') }}" class="card-img-top" alt="Kategori Jawa Barat">
+                </button>
+            </form>
+            <form method="post" action="{{ route('search') }}">
+                @csrf
+                <input type="hidden" name="provinsi" value="jawa tengah">
+                <button type="submit" style="border: none; background: none; padding: 0;">
+                    <img src="{{ asset('/img/Kategori/KG_jateng.png') }}" class="card-img-top" alt="Kategori Jawa Tengah">
+                </button>
+            </form>
+            <form method="post" action="{{ route('search') }}">
+                @csrf
+                <input type="hidden" name="provinsi" value="banten">
+                <button type="submit" style="border: none; background: none; padding: 0;">
+                    <img src="{{ asset('/img/Kategori/KG_banten.png') }}" class="card-img-top" alt="Kategori Banten">
+                </button>
+            </form>
+            <form method="post" action="{{ route('search') }}">
+                @csrf
+                <input type="hidden" name="provinsi" value="jawa timur">
+                <button type="submit" style="border: none; background: none; padding: 0;">
+                    <img src="{{ asset('/img/Kategori/KG_jatim.png') }}" class="card-img-top" alt="Kategori Jawa Timur">
+                </button>
+            </form>
+            <form method="post" action="{{ route('search') }}">
+                @csrf
+                <input type="hidden" name="provinsi" value="Yogyakarta">
+                <button type="submit" style="border: none; background: none; padding: 0;">
+                    <img src="{{ asset('/img/Kategori/KG_jogja.png') }}" class="card-img-top" alt="Kategori Yogyakarta">
+                </button>
+            </form>
         </div>
     </section>
+
+
+    <section class="container mt-5 overflow-hidden">
+        <h1>
+            Banyak yang menyukai
+        </h1>
+    </section>
+    
 
     <!-- Footer -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
