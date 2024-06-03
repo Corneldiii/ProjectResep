@@ -38,7 +38,23 @@ class HomeController extends Controller
             ->orWhere('favorit.status', 0) // Jika difavoritkan oleh pengguna tetapi statusnya 0 (belum difavoritkan), tetap tampilkan
             ->take(6)
             ->get();
-        return view('/Home', compact('data'));
+
+        $mostSaved = DB::table('resep')
+            ->leftJoin('favorit', function ($join) use ($id_akun) {
+                $join->on('resep.id_resep', '=', 'favorit.id_resep')
+                    ->where('favorit.id_akun', $id_akun);
+            })
+            ->select('resep.*', 'favorit.status')
+            ->where(function ($query) use ($id_akun) {
+                $query->where('favorit.id_akun', $id_akun) // Memilih resep yang telah difavoritkan oleh pengguna yang sedang masuk
+                    ->orWhereNull('favorit.id_fav'); // Atau resep yang belum difavoritkan oleh pengguna yang sedang masuk
+            })
+            ->orWhere('favorit.status', 0) // Jika difavoritkan oleh pengguna tetapi statusnya 0 (belum difavoritkan), tetap tampilkan
+            ->where('resep.jumlah_simpan', '>', 0)
+            ->orderBy('resep.jumlah_simpan', 'desc')
+            ->take(6)
+            ->get();
+        return view('/Home', compact('data','mostSaved'));
     }
 
     /**
@@ -54,6 +70,7 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $id_akun = $request->session()->get('id_akun');
 
         $data = [
@@ -63,7 +80,8 @@ class HomeController extends Controller
         ];
 
         fav::create($data);
-        return redirect()->route('home');
+        $this->update($request->input('id_resep'));
+        return redirect()->back();
     }
 
     /**
@@ -85,9 +103,13 @@ class HomeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(string $id)
     {
-        //
+        $resep = resep::where('id_resep', $id)->firstOrFail();
+        $resep->jumlah_simpan += 1;
+        $resep->save();
+
+        return redirect()->route('home');
     }
 
     /**

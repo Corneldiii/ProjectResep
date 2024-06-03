@@ -52,8 +52,8 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex mt-3">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex w-100" method="GET" action="{{ route('search') }}">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="cari">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

@@ -95,6 +95,7 @@
                                                     <path
                                                         d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
                                                 </svg>
+                                                <p class="text-light" style="font-size: 0.6rem;">{{ $items->jumlah_simpan }}</p>
                                             </button>
                                         @endif
                                         @if ($items->status == 1)
@@ -107,6 +108,7 @@
                                                     <path
                                                         d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
                                                 </svg>
+                                                <p class="text-light" style="font-size: 0.6rem;">{{ $items->jumlah_simpan }}</p>
 
                                             </button>
                                         @endif
@@ -145,7 +147,8 @@
                 @csrf
                 <input type="hidden" name="provinsi" value="jawa tengah">
                 <button type="submit" style="border: none; background: none; padding: 0;">
-                    <img src="{{ asset('/img/Kategori/KG_jateng.png') }}" class="card-img-top" alt="Kategori Jawa Tengah">
+                    <img src="{{ asset('/img/Kategori/KG_jateng.png') }}" class="card-img-top"
+                        alt="Kategori Jawa Tengah">
                 </button>
             </form>
             <form method="post" action="{{ route('search') }}">
@@ -159,14 +162,16 @@
                 @csrf
                 <input type="hidden" name="provinsi" value="jawa timur">
                 <button type="submit" style="border: none; background: none; padding: 0;">
-                    <img src="{{ asset('/img/Kategori/KG_jatim.png') }}" class="card-img-top" alt="Kategori Jawa Timur">
+                    <img src="{{ asset('/img/Kategori/KG_jatim.png') }}" class="card-img-top"
+                        alt="Kategori Jawa Timur">
                 </button>
             </form>
             <form method="post" action="{{ route('search') }}">
                 @csrf
                 <input type="hidden" name="provinsi" value="Yogyakarta">
                 <button type="submit" style="border: none; background: none; padding: 0;">
-                    <img src="{{ asset('/img/Kategori/KG_jogja.png') }}" class="card-img-top" alt="Kategori Yogyakarta">
+                    <img src="{{ asset('/img/Kategori/KG_jogja.png') }}" class="card-img-top"
+                        alt="Kategori Yogyakarta">
                 </button>
             </form>
         </div>
@@ -174,11 +179,73 @@
 
 
     <section class="container mt-5 overflow-hidden">
-        <h1>
-            Banyak yang menyukai
-        </h1>
+        <div class="row">
+            <h1>Banyak disukai</h1>
+        </div>
+        <div class="row row-cols-md-3 mt-3 mb-3">
+            @foreach ($mostSaved as $items)
+                {{-- {{ dd($items) }} --}}
+                <div class="col-sm mt-4">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card h-100 overflow-hidden shadow">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h6 class="card-title d-flex justify-content-center align-items-center">
+                                        {{ $items->nama }}</h6>
+                                    <p class="text-sm-left m-2" style="font-size: 0.8rem;">
+                                        {{ Str::limit($items->bahan, 50) }}
+                                    </p>
+                                    <a href="">
+                                        <p class="text-sm-left m-2" style="font-size: 0.8rem;">selengkapnya>></p>
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <img src="{{ $items->foto }}" class="card-img-top">
+                                    <form action="{{ route('favpost') }}" method="POST"
+                                        class="position-absolute top-0 end-0 m-1">
+                                        @csrf
+                                        @if ($items->status == 0)
+                                            <input type="hidden" name="id_resep" value="{{ $items->id_resep }}">
+                                            <button type="submit"
+                                                style="border: none; background: none; padding: 0; cursor: pointer;"
+                                                name="fav">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="white" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                                                </svg>
+                                                <p class="text-light" style="font-size: 0.6rem;">{{ $items->jumlah_simpan }}</p>
+                                            </button>
+                                        @endif
+                                        @if ($items->status == 1)
+                                            <input type="hidden" name="id_resep" value="{{ $items->id_resep }}">
+                                            <button type="submit"
+                                                style="border: none; background: none; padding: 0; cursor: pointer;"
+                                                name="fav">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="white" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                                                </svg>
+                                                <p class="text-light" style="font-size: 0.6rem;">{{ $items->jumlah_simpan }}</p>
+
+                                            </button>
+                                        @endif
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+
+
+
+        </div>
+
+
     </section>
-    
+
 
     <!-- Footer -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
