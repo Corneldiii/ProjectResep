@@ -80,10 +80,52 @@
                     </div>
                 @endforeach
             @else
-                    <h3>Resep belum ada nihh...</h3>
+                <h3>Resep belum ada nihh...</h3>
             @endif
         </div>
     </section>
+
+    <!-- Footer -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#343a40" fill-opacity="1"
+            d="M0,128L48,144C96,160,192,192,288,213.3C384,235,480,245,576,213.3C672,181,768,107,864,106.7C960,107,1056,181,1152,176C1248,171,1344,85,1392,42.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+    </svg>
+    <footer class="footer mt-auto py-3 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="footer-title">About Kuresep Masak</h5>
+                    <p>Kuresep Masak membuat masak sehari-hari makin menyenangkan dan mudah, karena dengan menyediakan
+                        lebih dari 100 resep masakan khas pulau jawa pada Web Kami.
+                        Kami mendukung koki rumahan di seluruh Indonesia untuk membantu satu sama lain dengan
+                        berbagi resep dan tips memasak.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Media Sosial</h5>
+                    <div class="footer-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <address>
+                        1234 Street Name<br>
+                        City, State, 56789<br>
+                        Email: info@example.com<br>
+                        Phone: (123) 456-7890
+                    </address>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p class="text-muted">&copy; 2024 Kuresep Masak. Kreativitas Tanpa Batas di Dapur.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

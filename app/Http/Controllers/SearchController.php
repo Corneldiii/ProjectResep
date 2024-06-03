@@ -100,7 +100,7 @@ class SearchController extends Controller
                 $query->where('favorit.id_akun', $id_akun)
                     ->orWhereNull('favorit.id_fav');
             })
-            ->where('resep.asal', $cari)
+            ->where('resep.asal','like','%' . $cari . '%')
             ->orWhere('favorit.status', 0)
             ->get();
 

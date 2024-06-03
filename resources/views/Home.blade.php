@@ -164,12 +164,19 @@
             </form>
             <form method="post" action="{{ route('search') }}">
                 @csrf
-                <input type="hidden" name="provinsi" value="jogja">
+                <input type="hidden" name="provinsi" value="Yogyakarta">
                 <button type="submit" style="border: none; background: none; padding: 0;">
                     <img src="{{ asset('/img/Kategori/KG_jogja.png') }}" class="card-img-top" alt="Kategori Yogyakarta">
                 </button>
             </form>
         </div>
+    </section>
+
+
+    <section class="container mt-5 overflow-hidden">
+        <h1>
+            Banyak yang menyukai
+        </h1>
     </section>
     
 
