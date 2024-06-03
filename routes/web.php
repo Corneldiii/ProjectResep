@@ -8,6 +8,7 @@ use App\Http\Controllers\SignupController;
 use App\Http\Controllers\StandByController;
 use App\Http\Controllers\InputResepController;
 use App\Http\Controllers\DaftarResepController;
+use App\Http\Controllers\FavController;
 
 Route::get('/Home', function () {
     return view('Home');
@@ -61,5 +62,7 @@ Route::get('/standby', [StandByController::class, 'index'])->name('standby');
 Route::get('/search',[SearchController::class, 'index'])->name('search');
 
 Route::post('/search', [SearchController::class, 'search'])->name('search');
+
+Route::get('/favorite', [FavController::class, 'index'])->name('favorite');
 
 
