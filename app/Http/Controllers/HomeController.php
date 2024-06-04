@@ -36,7 +36,7 @@ class HomeController extends Controller
                     ->orWhereNull('favorit.id_fav'); // Atau resep yang belum difavoritkan oleh pengguna yang sedang masuk
             })
             ->orWhere('favorit.status', 0) // Jika difavoritkan oleh pengguna tetapi statusnya 0 (belum difavoritkan), tetap tampilkan
-            ->take(6)
+            ->take(9)
             ->get();
 
         $mostSaved = DB::table('resep')
@@ -52,7 +52,7 @@ class HomeController extends Controller
             ->orWhere('favorit.status', 0) // Jika difavoritkan oleh pengguna tetapi statusnya 0 (belum difavoritkan), tetap tampilkan
             ->where('resep.jumlah_simpan', '>', 0)
             ->orderBy('resep.jumlah_simpan', 'desc')
-            ->take(6)
+            ->take(9)
             ->get();
         return view('/Home', compact('data', 'mostSaved'));
     }

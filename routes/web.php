@@ -29,6 +29,10 @@ Route::get('/t', function () {
     return view('TambahMenu');
 });
 
+Route::get('/i', function () {
+    return view('InfoResep');
+});
+
 Route::get('/search', function () {
     return view('search');
 });
