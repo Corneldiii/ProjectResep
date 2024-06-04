@@ -47,6 +47,8 @@ Route::get('/home',[HomeController::class, 'index'])->name('home');
 
 Route::post('/home',[HomeController::class, 'store'])->name('favpost');
 
+Route::delete('/home',[HomeController::class, 'destroy']) -> name('deletefav');
+
 Route::get('/TambahMenu',[InputResepController::class, 'index'])->name('inputresep');
 
 Route::post('/TambahMenu',[InputResepController::class, 'store'])->name('inputresep_post');

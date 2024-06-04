@@ -54,7 +54,7 @@ class HomeController extends Controller
             ->orderBy('resep.jumlah_simpan', 'desc')
             ->take(6)
             ->get();
-        return view('/Home', compact('data','mostSaved'));
+        return view('/Home', compact('data', 'mostSaved'));
     }
 
     /**
@@ -109,14 +109,29 @@ class HomeController extends Controller
         $resep->jumlah_simpan += 1;
         $resep->save();
 
-        return redirect()->route('home');
+        return redirect()->back();
+    }
+    public function updateDelete(string $id)
+    {
+        $resep = resep::where('id_resep', $id)->firstOrFail();
+        $resep->jumlah_simpan -= 1;
+        $resep->save();
+
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        $id_akun = session('id_akun');
+        // dd($request);
+        DB::table('favorit')
+            ->where('id_resep', $request->input('id_resep'))
+            ->where('id_akun', $id_akun)
+            ->delete();
+        $this->updateDelete($request->input('id_resep'));
+        return redirect()->back();
     }
 }
