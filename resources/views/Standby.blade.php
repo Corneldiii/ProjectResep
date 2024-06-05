@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
@@ -32,15 +33,23 @@
 
         body::before {
             left: 0;
-            background-image: url('/img/standby_kiri.png');
+            background-image: url('');
             /* Replace with your left-side image path */
         }
 
         body::after {
             right: 0;
-            background-image: url('/img/Logo_remove.png');
+            background-image: url('');
             /* Replace with your right-side image path */
         }
+        
+        .bi-emoji-smile-fill {
+            color: #FFD700; /* Warna kuning */
+        }
+        .bi-hand-thumbs-up {
+            color: #F0C29D; /* Warna kulit */
+        }
+
     </style>
 </head>
 
@@ -139,7 +148,8 @@
             </div>
             <div class="col-md-8">
                 <div class="card mb-4">
-                    <img src="https://via.placeholder.com/800x400" class="card-img-top img-fluid" alt="Article Image">
+                   <!-- <img src="https://via.placeholder.com/800x400" class="card-img-top img-fluid" alt="Article Image"-->
+                    <img src="/img/combinasi.jpg" class="card-img-top img-fluid" alt="Article Image">
                     <div class="card-body">
                         <h5 class="card-title">Simpan Resep langsung di Web</h5>
                     </div>
@@ -148,9 +158,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-sm-4">
                 <div class="card mb-4">
-                    <img src="" class="card-img-top img-fluid" alt="Article Image">
+                    <img src="/img/Rawon.jpeg" class="card-img-top img-fluid" alt="Rawon">
                     <div class="card-body">
                         <h5 class="card-title">Bagikan resepmu di Kuresep Masak</h5>
                     </div>
@@ -167,6 +177,54 @@
                 </div>
             </div>
         </div>
+         <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card mb-4 shadow-sm">
+                    <img src="/img/Rabeg Kambing.jpeg" class="card-img-top" alt="Rebeg Kambing">
+                    <div class="card-body">
+                        <p class="card-text">Terima kasih resepnya! Enak banget! <span class="text-danger">❤️</span></p>
+                        <h6 class="card-subtitle mb-2">Rebeg Kambing</h6>
+                        <div class="d-flex align-items-center">
+                            <img src="/img/foto erik.jpg" alt="Erik" class="rounded-circle" width="30" height="30">
+                            <span class="ml-2 text-muted">Erik</span>
+                        </div>
+                        <div class="reactions mt-2">
+                            <span><i class="bi bi-emoji-smile-fill"></i> 23</span>
+                            <span class="text-danger"><i class="bi bi-heart-fill"></i> 17</span>
+                            <span><i class="bi bi-hand-thumbs-up"></i> 9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 my-5">
+                <div class="card mb-4 shadow-sm ">
+                    <img src="/img/Kerak Telor.jpeg" class="card-img-top" alt="Kerak Telor">
+                    <div class="card-body">
+                        <p class="card-text">Makan ini sangat gurih dengan di berikan toping serungdeng.Terima kasih 
+                            sudah berbagi dengan kami! <span class="">🍳</span></p>
+                        <h6 class="card-subtitle mb-2">Kerak Telor</h6>
+                        <div class="d-flex align-items-center">
+                            <img src="/img/foto dicky.jpg" alt="Dicky" class="rounded-circle" width="30" height="30">
+                            <span class="ml-2 text-muted">Dicky</span>
+                        </div>
+                        <div class="reactions mt-2">
+                            <span><i class="bi bi-emoji-smile-fill"></i> 40</span>
+                            <span class="text-danger"><i class="bi bi-heart-fill"></i> 22</span>
+                            <span><i class="bi bi-hand-thumbs-up"></i>14</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-5 mx-auto">
+                <div class="Foodpic-info">
+                    <h1>Share Foodpic..</h1>
+                    <p>Dengan melalui Foodpic, kamu dapat membagikan berbagi macam kreasi keberhasilan dan pengalamanmu untuk resep yang sudah kamu coba di Kuresep Masak.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+      
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
