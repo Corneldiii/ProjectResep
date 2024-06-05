@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('resep', function (Blueprint $table){
-            $table -> id('id_resep')-> primary();
+        Schema::create('daftarResep', function (Blueprint $table){
+            $table -> id('id_daftar')-> primary();
             $table -> string('nama');
             $table ->  string('asal');
             $table ->  text('bahan');
             $table -> text('langkah');
             $table -> string('foto')-> unique();
             $table->unsignedBigInteger('user_id');
-            $table ->  integer('jumlah_simpan') -> default(0);
             $table->foreign('user_id')->references('id_akun')->on('akun');
             $table -> timestamps();
         });
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('resep');
+        //
     }
 };

@@ -3,12 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InputResepController;
-use App\Http\Controllers\StandByController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\StandByController;
+use App\Http\Controllers\InputResepController;
+use App\Http\Controllers\DaftarResepController;
+use App\Http\Controllers\FavController;
 
 Route::get('/Home', function () {
     return view('Home');
+});
+Route::get('/HomeAdmin', function () {
+    return view('HomeAdmin');
 });
 
 Route::get('/', function () {
@@ -21,6 +27,10 @@ Route::get('/welcome', function () {
 
 Route::get('/t', function () {
     return view('TambahMenu');
+});
+
+Route::get('/i', function () {
+    return view('InfoResep');
 });
 
 Route::get('/search', function () {
@@ -41,10 +51,24 @@ Route::get('/home',[HomeController::class, 'index'])->name('home');
 
 Route::post('/home',[HomeController::class, 'store'])->name('favpost');
 
+Route::delete('/home',[HomeController::class, 'destroy']) -> name('deletefav');
+
 Route::get('/TambahMenu',[InputResepController::class, 'index'])->name('inputresep');
 
 Route::post('/TambahMenu',[InputResepController::class, 'store'])->name('inputresep_post');
 
+Route::get('/HomeAdmin',[DaftarResepController::class, 'index'])->name('homeadmin');
+
+Route::post('/HomeAdmin', [DaftarResepController::class, 'store']) -> name('admin_post');
+
+Route::delete('/HomeAdmin/{id}', [DaftarResepController::class, 'destroy']) -> name('admin_delete');
+
 Route::get('/standby', [StandByController::class, 'index'])->name('standby');
+
+Route::get('/search',[SearchController::class, 'index'])->name('search');
+
+Route::post('/search', [SearchController::class, 'search'])->name('search');
+
+Route::get('/favorite', [FavController::class, 'index'])->name('favorite');
 
 

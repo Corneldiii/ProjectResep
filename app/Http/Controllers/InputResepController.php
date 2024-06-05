@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\daftar_resep;
 use App\Models\resep;
 use Illuminate\Http\Request;
 
@@ -69,7 +70,11 @@ class InputResepController extends Controller
 
         // dd($data);
 
-        resep::create($data);
+        if($id_akun === 1){
+            resep::create($data);
+        }else{
+            daftar_resep::create($data);
+        }
         return redirect()->route('inputresep');
     }
 

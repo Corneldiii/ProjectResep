@@ -11,6 +11,8 @@ class resep extends Model
 
     protected $table = "resep";
 
+    protected $primaryKey = 'id_resep';
+
     protected $fillable = ["nama","asal","bahan","langkah","foto","user_id"];
 
     public function favoritedByUsers()
