@@ -16,13 +16,14 @@ CREATE TABLE `akun` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_akun`),
   UNIQUE KEY `akun_username_unique` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `akun` (`id_akun`, `username`, `password`, `created_at`, `updated_at`) VALUES
 (1, 'admin123@gmail.com', '$2y$12$zEyrlT1ad4s3/TxlQc63G.pon7V6czxH0q0jENWdQX8c5VipqwD02', '2024-05-26 13:43:31', '2024-05-26 13:43:31');
 INSERT INTO `akun` (`id_akun`, `username`, `password`, `created_at`, `updated_at`) VALUES
 (2, 'user123@gmail.com', '$2y$12$lfaDM4LseTbmSGcWRBxykO.2lCqBJN.R6sfJyO4djUVemqQOIV46K', '2024-05-30 05:23:40', '2024-05-30 05:23:40');
-
+INSERT INTO `akun` (`id_akun`, `username`, `password`, `created_at`, `updated_at`) VALUES
+(3, 'user2@gmail.com', '$2y$12$yh/h/PdiDgAYGaBbMlBQL.GXf4gMV1T30BPEDU2snWg6ytz6idpyC', '2024-06-03 16:24:44', '2024-06-03 16:24:44');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

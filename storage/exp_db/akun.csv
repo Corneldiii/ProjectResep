@@ -1,0 +1,4 @@
+id_akun,username,password,created_at,updated_at
+1,admin123@gmail.com,$2y$12$zEyrlT1ad4s3/TxlQc63G.pon7V6czxH0q0jENWdQX8c5VipqwD02,2024-05-26 13:43:31,2024-05-26 13:43:31
+2,user123@gmail.com,$2y$12$lfaDM4LseTbmSGcWRBxykO.2lCqBJN.R6sfJyO4djUVemqQOIV46K,2024-05-30 05:23:40,2024-05-30 05:23:40
+3,user2@gmail.com,$2y$12$yh/h/PdiDgAYGaBbMlBQL.GXf4gMV1T30BPEDU2snWg6ytz6idpyC,2024-06-03 16:24:44,2024-06-03 16:24:44
