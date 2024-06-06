@@ -69,6 +69,7 @@
         .modal-body p {
             margin-bottom: 1rem;
         }
+
         /* Sampe sini */
     </style>
 </head>
@@ -94,17 +95,6 @@
                     <a href="#" class="text-decoration-none text-dark">
                         <div class="card h-100 overflow-hidden shadow">
                             <div class="row">
-                                {{-- 
-                                <div class="col-8">
-                                    <h6 class="card-title d-flex justify-content-center align-items-center">
-                                        {{ $items->nama }}</h6>
-                                    <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                        {{ Str::limit($items->bahan, 50) }}
-                                    </p>
-                                    <a href="">
-                                        <p class="text-sm-left m-2" style="font-size: 0.8rem;">selengkapnya>></p>
-                                    </a>
-                                </div> --}}
 
                                 {{-- mulai dari sini --}}
                                 <div class="col-8">
@@ -136,38 +126,14 @@
                                                     alt="Foto Resep">
                                                 <p><strong>Asal:</strong> <span id="modalAsal"></span></p>
                                                 <p><strong>Bahan:</strong></p>
-                                                <p id="modalBahan"></p>
+                                                <div id="modalBahan"></div>
                                                 <p><strong>Langkah:</strong></p>
-                                                <p id="modalLangkah"></p>
+                                                <div id="modalLangkah"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Modal -->
-                                {{-- <div class="modal fade" id="resepModal" tabindex="-1" aria-labelledby="resepModalLabel"
-                                    aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="resepModalLabel">Detail Resep</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <img id="modalFoto" src="" class="img-fluid mb-3"
-                                                    alt="Foto Resep">
-                                                <h5 id="modalNama"></h5>
-                                                <p><strong>Asal:</strong> <span id="modalAsal"></span></p>
-                                                <p><strong>Bahan:</strong></p>
-                                                <p id="modalBahan"></p>
-                                                <p><strong>Langkah:</strong></p>
-                                                <p id="modalLangkah"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{-- Sampe sini --}}
 
                                 <div class="col-4">
                                     <img src="{{ $items->foto }}" class="card-img-top">
@@ -417,90 +383,13 @@
     </footer>
 
     <!-- Optional JavaScript; choose one of the two! -->
-
     {{-- <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-
-        document.addEventListener('DOMContentLoaded', function () {
-        const resepModal = document.getElementById('resepModal');
-        resepModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            
-            // Ambil data dari atribut data-*
-            const nama = button.getAttribute('data-nama');
-            const asal = button.getAttribute('data-asal');
-            const bahan = button.getAttribute('data-bahan');
-            const langkah = button.getAttribute('data-langkah');
-            const foto = button.getAttribute('data-foto');
-
-            // Debugging logs
-            console.log('Nama:', nama);
-            console.log('Asal:', asal);
-            console.log('Bahan:', bahan);
-            console.log('Langkah:', langkah);
-            console.log('Foto:', foto);
-
-            // Temukan elemen modal
-            const modalFoto = document.getElementById('modalFoto');
-            const modalNama = document.getElementById('modalNama');
-            const modalAsal = document.getElementById('modalAsal');
-            const modalBahan = document.getElementById('modalBahan');
-            const modalLangkah = document.getElementById('modalLangkah');
-
-            // Isi modal dengan data
-            modalFoto.src = foto;
-            modalNama.textContent = nama;
-            modalAsal.textContent = asal;
-            modalBahan.textContent = bahan;
-            modalLangkah.textContent = langkah;
-        });
-    });
-    </script> --}}
 
     {{-- Mulai dari sini --}}
-
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    {{-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const resepModal = document.getElementById('resepModal');
-            resepModal.addEventListener('show.bs.modal', function(event) {
-                const button = event.relatedTarget;
-
-                // Ambil data dari atribut data-*
-                const nama = button.getAttribute('data-nama');
-                const asal = button.getAttribute('data-asal');
-                const bahan = button.getAttribute('data-bahan');
-                const langkah = button.getAttribute('data-langkah');
-                const foto = button.getAttribute('data-foto');
-
-                // Debugging logs
-                console.log('Nama:', nama);
-                console.log('Asal:', asal);
-                console.log('Bahan:', bahan);
-                console.log('Langkah:', langkah);
-                console.log('Foto:', foto);
-
-                // Temukan elemen modal
-                const modalFoto = document.getElementById('modalFoto');
-                const modalNama = document.getElementById('modalNama');
-                const modalAsal = document.getElementById('modalAsal');
-                const modalBahan = document.getElementById('modalBahan');
-                const modalLangkah = document.getElementById('modalLangkah');
-
-                // Isi modal dengan data
-                modalFoto.src = foto;
-                modalNama.textContent = nama;
-                modalAsal.textContent = asal;
-                modalBahan.textContent = bahan;
-                modalLangkah.textContent = langkah;
-            });
-        });
-    </script> --}}
-    {{-- sampe sini --}}
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -529,15 +418,28 @@
                 const modalBahan = document.getElementById('modalBahan');
                 const modalLangkah = document.getElementById('modalLangkah');
 
+                // Fungsi untuk memformat teks bahan menjadi daftar
+                function formatBahan(bahan) {
+                    return bahan.split('-').filter(item => item.trim() !== '').map(item =>
+                        `<li>${item.trim()}</li>`).join('');
+                }
+
+                // Fungsi untuk memformat teks langkah menjadi daftar
+                function formatLangkah(langkah) {
+                    return langkah.split(/\d+\.\s+/).filter(item => item.trim() !== '').map((item, index) =>
+                        `<li>${index + 1}. ${item.trim()}</li>`).join('');
+                }
+
                 // Isi modal dengan data
                 modalFoto.src = foto;
                 modalNama.textContent = nama;
                 modalAsal.textContent = asal;
-                modalBahan.textContent = bahan;
-                modalLangkah.textContent = langkah;
+                modalBahan.innerHTML = `<ul>${formatBahan(bahan)}</ul>`;
+                modalLangkah.innerHTML = `<ol>${formatLangkah(langkah)}</ol>`;
             });
         });
     </script>
+
 
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
