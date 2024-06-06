@@ -14,7 +14,7 @@ class DaftarResepController extends Controller
     public function index()
     {
 
-        $data = daftar_resep::take(6)->get();
+        $data = daftar_resep::all();
         return view('/HomeAdmin', compact('data'));
     }
 
