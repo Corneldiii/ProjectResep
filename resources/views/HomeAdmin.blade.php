@@ -93,68 +93,62 @@
             <h1>Daftar Masukan Resep</h1>
 
         </div>
+        {{-- {{ dd($data) }} --}}
+        @if (count($data) > 0)
+        @foreach ($data as $items)
         <div class="row row-cols-md-3 mt-3 mb-3">
-            {{-- {{ dd($data) }} --}}
-            @if (count($data) > 0)
-                @foreach ($data as $items)
-                    <div class="col-sm mt-4">
-                        <a href="#" class="text-decoration-none text-dark">
-                            <div class="card overflow-hidden shadow" style="width: 1100px; height: 131px;">
-                                <div class="row">
-                                    <div class="col-sm">
-                                        <img src="{{ $items->foto }}" class="card-img-top w-75 h-50">
-                                    </div>
-                                    <div
-                                        class="col-sm d-flex flex-column justify-content-center align-items-center h-50">
-                                        <h6 class="card-title ">
-                                            {{ $items->nama }}</h6>
-                                        <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                            {{ Str::limit($items->bahan, 150) }}
-                                        </p>
-                                    </div>
-                                    <div class="col-sm d-flex justify-content-center align-items-center h-50 gap-4">
-                                        <form action="{{ route('admin_post') }}" method="POST"
-                                            class="d-flex justify-content-center align-items-center ">
-                                            @csrf
-                                            <input type="hidden" name="id_daftar" value="{{ $items->id_daftar }}">
-                                            <button type="submit" style="border: none; background: none; padding: 0;"
-                                                name="accept">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
-                                                    fill="yellow" class="bi bi-check-circle-fill"
-                                                    style="cursor: pointer;" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                                </svg>
-                                            </button>
-                                        </form>
-                                        <form action="{{ route('admin_delete', $items->id_daftar) }}" method="POST"
-                                            class="d-flex justify-content-center align-items-center">
-                                            @csrf
-                                            @method('DELETE')
-                                            {{-- <input type="hidden" name="id_daftar" value="{{ $items->id_daftar }}"> --}}
-                                            <button type="submit" style="border: none; background: none; padding: 0;"
-                                                name="decline">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
-                                                    style="cursor: pointer;" fill="red"
-                                                    class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
-                                                </svg>
-                                            </button>
-                                        </form>
-                                    </div>
+                    <a href="#" class="text-decoration-none text-dark">
+                        <div class="card overflow-hidden shadow" style="width: 1100px; height: 131px;">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <img src="{{ $items->foto }}" class="card-img-top w-75 h-50">
+                                </div>
+                                <div class="col-sm d-flex flex-column justify-content-center align-items-center h-50">
+                                    <h6 class="card-title ">
+                                        {{ $items->nama }}</h6>
+                                    <p class="text-sm-left m-2" style="font-size: 0.8rem;">
+                                        {{ Str::limit($items->bahan, 150) }}
+                                    </p>
+                                </div>
+                                <div class="col-sm d-flex justify-content-center align-items-center h-50 gap-4">
+                                    <form action="{{ route('admin_post') }}" method="POST"
+                                        class="d-flex justify-content-center align-items-center ">
+                                        @csrf
+                                        <input type="hidden" name="id_daftar" value="{{ $items->id_daftar }}">
+                                        <button type="submit" style="border: none; background: none; padding: 0;"
+                                            name="accept">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                fill="yellow" class="bi bi-check-circle-fill"
+                                                style="cursor: pointer;" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('admin_delete', $items->id_daftar) }}" method="POST"
+                                        class="d-flex justify-content-center align-items-center">
+                                        @csrf
+                                        @method('DELETE')
+                                        {{-- <input type="hidden" name="id_daftar" value="{{ $items->id_daftar }}"> --}}
+                                        <button type="submit" style="border: none; background: none; padding: 0;"
+                                            name="decline">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                style="cursor: pointer;" fill="red" class="bi bi-x-circle-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+                                            </svg>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                </div>
                 @endforeach
             @else
                 <h5 class="mt-5 w-100">Belum ada data resep yang masuk nih...</h5>
             @endif
-
-
-
-        </div>
     </section>
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
