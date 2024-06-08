@@ -134,7 +134,6 @@
                                     </div>
                                 </div>
 
-
                                 <div class="col-4">
                                     <img src="{{ $items->foto }}" class="card-img-top">
                                     <form action="{{ route('favpost') }}" method="POST"
@@ -426,7 +425,7 @@
 
                 // Fungsi untuk memformat teks langkah menjadi daftar
                 function formatLangkah(langkah) {
-                    return langkah.split(/\d+\.\s+/).filter(item => item.trim() !== '').map((item, index) =>
+                    return langkah.split('.\n').filter(item => item.trim() !== '').map((item, index) =>
                         `<li>${index + 1}. ${item.trim()}</li>`).join('');
                 }
 
@@ -439,7 +438,6 @@
             });
         });
     </script>
-
 
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
