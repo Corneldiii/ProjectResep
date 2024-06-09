@@ -44,7 +44,7 @@
                             Dropdown
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('inputresep') }}">Tambahkan menu kreasimu</a></li>
+                            <li><a class="dropdown-item" href="{{ route('tambahmenu') }}">Tambahkan menu kreasimu</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

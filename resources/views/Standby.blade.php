@@ -20,17 +20,21 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+
         .bi-emoji-smile-fill {
-            color: #FFD700; /* Warna kuning */
-        }
-        .bi-hand-thumbs-up {
-            color: #F0C29D; /* Warna kulit */
+            color: #FFD700;
+            /* Warna kuning */
         }
 
+        .bi-hand-thumbs-up {
+            color: #F0C29D;
+            /* Warna kulit */
+        }
     </style>
 </head>
 
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-1 mb-5 bg-white rounded">
         <div class="container">
@@ -56,6 +60,22 @@
         </div>
     </nav>
 
+    @if (session('message'))
+        <div class="toast" style="position: fixed; top: 20px; right: 20px; z-index: 1050;">
+            <div class="toast-header">
+                <strong class="mr-auto">Pesan</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                {{ session('message') }}
+            </div>
+        </div>
+    @endif
+
+
+
     <!-- Section Pembukaan -->
     <section class="pembukaan d-flex justify-content-center align-items-center mt-4 p-3">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -77,7 +97,7 @@
                 <div class="carousel-item">
                     <img src="{{ asset('/img/standby makanan_1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
                 </div>
-               
+
             </div>
             <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
                 data-slide="prev">
@@ -129,7 +149,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card mb-4 shadow">
-                   <!-- <img src="https://via.placeholder.com/800x400" class="card-img-top img-fluid" alt="Article Image"-->
+                    <!-- <img src="https://via.placeholder.com/800x400" class="card-img-top img-fluid" alt="Article Image"-->
                     <img src="/img/combinasi.jpg" class="card-img-top img-fluid" alt="Article Image">
                     <div class="card-body">
                         <h5 class="card-title">Simpan Resep langsung di Web</h5>
@@ -158,51 +178,57 @@
                 </div>
             </div>
         </div>
-         <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card mb-4 shadow">
-                    <img src="/img/Rebeg Kambing 2.jpg" class="card-img-top" alt="Rebeg Kambing">
-                    <div class="card-body">
-                        <p class="card-text">Makanan yang berpadukan antra daging kambing yang empuk dan kuah santan yang gurih
-                            menambah nikmat nya hidang ini,Mari coba lah resep Makanan Khas Banten ini! <span class="text-danger">❤️</span></p>
-                        <h6 class="card-subtitle mb-2">Rebeg Kambing</h6>
-                    
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card mb-4 shadow">
+                        <img src="/img/Rebeg Kambing 2.jpg" class="card-img-top" alt="Rebeg Kambing">
+                        <div class="card-body">
+                            <p class="card-text">Makanan yang berpadukan antra daging kambing yang empuk dan kuah
+                                santan yang gurih
+                                menambah nikmat nya hidang ini,Mari coba lah resep Makanan Khas Banten ini! <span
+                                    class="text-danger">❤️</span></p>
+                            <h6 class="card-subtitle mb-2">Rebeg Kambing</h6>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-4 my-5">
-                <div class="card mb-4 shadow">
-                    <img src="/img/Kerak Telor 2.jpg" class="card-img-top" alt="Kerak Telor">
-                    <div class="card-body">
-                        <p class="card-text">Makan ini sangat gurih dengan di berikan toping serungdeng.Dengan resep 
-                            tersebut kami yakin ada menyukai makanan khas dari Dki Jakarta ini! <span class="">🍳</span></p>
-                        <h6 class="card-subtitle mb-2">Kerak Telor</h6>
-                       
+                <div class="col-sm-4 my-5">
+                    <div class="card mb-4 shadow">
+                        <img src="/img/Kerak Telor 2.jpg" class="card-img-top" alt="Kerak Telor">
+                        <div class="card-body">
+                            <p class="card-text">Makan ini sangat gurih dengan di berikan toping serungdeng.Dengan
+                                resep
+                                tersebut kami yakin ada menyukai makanan khas dari Dki Jakarta ini! <span
+                                    class="">🍳</span></p>
+                            <h6 class="card-subtitle mb-2">Kerak Telor</h6>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-4 ">
-                <div class="card mb-4 shadow">
-                    <img src="/img/Combro.jpg" class="card-img-top" alt="Combro">
-                    <div class="card-body">
-                        <p class="card-text">Hidangan yang terbuat dari singkong yang  diisi oleh sambal oncom,
-                             berbentuk lonjong, digoreng sampai garing dan bisa jadi kudapan yang mengenyangkan,Resep ini
-                             khas dari Jawa Barat! <span class="">❤️</span></p>
-                        <h6 class="card-subtitle mb-2">Combro</h6>
-                       
+                <div class="col-sm-4 ">
+                    <div class="card mb-4 shadow">
+                        <img src="/img/Combro.jpg" class="card-img-top" alt="Combro">
+                        <div class="card-body">
+                            <p class="card-text">Hidangan yang terbuat dari singkong yang diisi oleh sambal oncom,
+                                berbentuk lonjong, digoreng sampai garing dan bisa jadi kudapan yang mengenyangkan,Resep
+                                ini
+                                khas dari Jawa Barat! <span class="">❤️</span></p>
+                            <h6 class="card-subtitle mb-2">Combro</h6>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 my-5 mx-auto">
-                <div class="Foodpic-info">
-                    <h1>Share Foodpic..</h1>
-                    <p>Dengan melalui Foodpic, kamu dapat membagikan berbagi macam kreasi keberhasilan dan pengalamanmu untuk resep yang sudah kamu coba di Kuresep Masak.</p>
+                <div class="col-md-4 my-5 mx-auto">
+                    <div class="Foodpic-info">
+                        <h1>Share Foodpic..</h1>
+                        <p>Dengan melalui Foodpic, kamu dapat membagikan berbagi macam kreasi keberhasilan dan
+                            pengalamanmu untuk resep yang sudah kamu coba di Kuresep Masak.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-      
+
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -274,6 +300,13 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
+    
+    <script>
+        $(document).ready(function() {
+            $('.toast').toast('show');
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
     </script>
