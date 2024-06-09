@@ -33,18 +33,6 @@
             z-index: -1;
            
         }
-
-        body::before {
-            left: 0;
-            background-image: url('img/standby_kiri.png');
-            /* Replace with your left-side image path */
-        }
-
-        body::after {
-            right: 0;
-            background-image: url('img/standby_kiri.png');
-            /* Replace with your right-side image path */
-        }
         
         .bi-emoji-smile-fill {
             color: #FFD700; /* Warna kuning */
@@ -118,7 +106,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-8">
-                <div class="card mb-4 shadow-sm">
+                <div class="card mb-4 shadow">
                     <img src="/img/artikel_1_standby.png" class="card-img-top img-fluid" alt="Article Image">
                     <div class="card-body">
                         <h5 class="card-title">Cari dan temukan resep dari Kuresep Masak</h5>
@@ -126,7 +114,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
+                <div class="card mb-4 shadow">
                     <div class="card-body">
                         <h5 class="card-title">Temukan lebih dari 100 Resep makanan dari pulau Jawa</h5>
                         <p class="card-text">Mulai dari manisnya makan Jogja , Gurihnya makan Jawa tengah, hingga
@@ -140,7 +128,7 @@
 
         <div class="row">
             <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
+                <div class="card mb-4 shadow">
                     <div class="card-body">
                         <h5 class="card-title">Simpan Resep kesukaan dan favorit</h5>
                         <p class="card-text">Melalui fitur Simpan resep, anda dapat menyimpan resep untuk dimasak.</p>
@@ -150,7 +138,7 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="card mb-4 shadow-sm">
+                <div class="card mb-4 shadow">
                    <!-- <img src="https://via.placeholder.com/800x400" class="card-img-top img-fluid" alt="Article Image"-->
                     <img src="/img/combinasi.jpg" class="card-img-top img-fluid" alt="Article Image">
                     <div class="card-body">
@@ -162,7 +150,7 @@
 
         <div class="row">
             <div class="col-sm-5">
-                <div class="card mb-4 shadow-sm">
+                <div class="card mb-4 shadow">
                     <img src="/img/Standby Makanan.jpg" class="card-img-top img-fluid" alt="Rawon">
                     <div class="card-body">
                         <h5 class="card-title">Bagikan resepmu di Kuresep Masak</h5>
@@ -170,7 +158,7 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="card mb-4 shadow-sm">
+                <div class="card mb-4 shadow">
                     <div class="card-body">
                         <h5 class="card-title">Bagikan Resep makanan dari masakanmu</h5>
                         <p class="card-text">Abadikan dan membagikan pengalaman memasak maupun resep dengan
@@ -183,7 +171,7 @@
          <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <div class="card mb-4 shadow-sm">
+                <div class="card mb-4 shadow">
                     <img src="/img/Rebeg Kambing 2.jpg" class="card-img-top" alt="Rebeg Kambing">
                     <div class="card-body">
                         <p class="card-text">Makanan yang berpadukan antra daging kambing yang empuk dan kuah santan yang gurih
@@ -194,7 +182,7 @@
                 </div>
             </div>
             <div class="col-sm-4 my-5">
-                <div class="card mb-4 shadow-sm ">
+                <div class="card mb-4 shadow">
                     <img src="/img/Kerak Telor 2.jpg" class="card-img-top" alt="Kerak Telor">
                     <div class="card-body">
                         <p class="card-text">Makan ini sangat gurih dengan di berikan toping serungdeng.Dengan resep 
@@ -205,7 +193,7 @@
                 </div>
             </div>
             <div class="col-sm-4 ">
-                <div class="card mb-4 shadow-sm ">
+                <div class="card mb-4 shadow">
                     <img src="/img/Combro.jpg" class="card-img-top" alt="Combro">
                     <div class="card-body">
                         <p class="card-text">Hidangan yang terbuat dari singkong yang  diisi oleh sambal oncom,
