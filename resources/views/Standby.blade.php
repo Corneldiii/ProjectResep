@@ -17,7 +17,9 @@
         body {
             position: relative;
             overflow-x: hidden;
-            
+            background-image: url('img/Background Makanan5.jpg'); 
+            background-size: cover;
+            background-position: center;
             
         }
 
@@ -32,6 +34,18 @@
             background-position: center;
             z-index: -1;
            
+        }
+
+        body::before {
+            left: 0;
+            background-image: url('img/standby_kiri.png');
+            /* Replace with your left-side image path */
+        }
+
+        body::after {
+            right: 0;
+            background-image: url('img/standby_kiri.png');
+            /* Replace with your right-side image path */
         }
         
         .bi-emoji-smile-fill {
@@ -80,14 +94,18 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('/img/gudeg_standby_1.png') }}" class="d-block w-100 img-fluid" alt="...">
+                    <img src="{{ asset('/img/gudeg standby_1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('/img/soto_standby_1.png') }}" class="d-block w-100 img-fluid" alt="...">
+                    <img src="{{ asset('/img/soto Standby_1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('/img/seblak_standby_1.png') }}" class="d-block w-100 img-fluid" alt="...">
+                    <img src="{{ asset('/img/ayam kalasan_1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
                 </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('/img/standby makanan_1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                </div>
+               
             </div>
             <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
                 data-slide="prev">
