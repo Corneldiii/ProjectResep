@@ -12,6 +12,12 @@
     <title>Resep Masakan dari Kuresep Masak</title>
 
     <style>
+        body {
+            background-image: url('/img/bg-web.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
         /* Mulai dari sini */
         .modal-header {
             background-color: #f8f9fa;

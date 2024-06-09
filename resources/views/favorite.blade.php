@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Resep Masakan dari Kuresep Masak</title>
 </head>
+<style>
+    body {
+            background-image: url('/img/bg-web.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+</style>
 
 <body>
     <x-navbar />
