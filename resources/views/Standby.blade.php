@@ -15,39 +15,11 @@
     <title>Kuresep Masak</title>
     <style>
         body {
-            position: relative;
-            overflow-x: hidden;
-            background-image: url('img/Background Makanan5.jpg'); 
+            background-image: url('/img/bg-web.png');
             background-size: cover;
+            background-repeat: no-repeat;
             background-position: center;
-            
         }
-
-        body::before,
-        body::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 200px;
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-           
-        }
-
-        body::before {
-            left: 0;
-            background-image: url('img/standby_kiri.png');
-            /* Replace with your left-side image path */
-        }
-
-        body::after {
-            right: 0;
-            background-image: url('img/standby_kiri.png');
-            /* Replace with your right-side image path */
-        }
-        
         .bi-emoji-smile-fill {
             color: #FFD700; /* Warna kuning */
         }

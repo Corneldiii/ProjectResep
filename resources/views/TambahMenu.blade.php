@@ -14,9 +14,10 @@
     <title>Kuresep masak</title>
     <style>
         body {
-
-            background: url('img/InputResep.png');
+            background-image: url('/img/bg-web.png');
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
     </style>
 </head>
