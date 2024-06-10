@@ -71,7 +71,6 @@
             border-radius: 0.75rem;
             margin-bottom: 1rem;
             max-width: 100%;
-            /* Untuk memastikan gambar tidak melampaui lebar modal */
         }
 
         .modal-body p {
