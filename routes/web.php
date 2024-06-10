@@ -17,11 +17,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/login', [AkunController::class, 'index'])->middleware(CheckSession::class)->name('login');
+Route::get('/login', [AkunController::class, 'index'])->name('login');
 
 Route::post('/login', [AkunController::class, 'login']);
 
-Route::get('/SignUp',[SignupController::class, 'index'])->middleware(CheckSession::class)->name('signup');
+Route::get('/SignUp',[SignupController::class, 'index'])->name('signup');
 
 Route::post('/SignUp',[SignupController::class, 'store'])->name('signup_post');
 
@@ -31,7 +31,7 @@ Route::post('/home',[HomeController::class, 'store'])->name('favpost');
 
 Route::delete('/home',[HomeController::class, 'destroy']) -> name('deletefav');
 
-Route::get('/TambahMenu',[InputResepController::class, 'index'])->middleware(CheckSession::class)->name('Tambahmenu');
+Route::get('/TambahMenu',[InputResepController::class, 'index'])->middleware(CheckSession::class)->name('tambahmenu');
 
 Route::post('/TambahMenu',[InputResepController::class, 'store'])->name('inputresep_post');
 

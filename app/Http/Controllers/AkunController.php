@@ -67,18 +67,18 @@ class AkunController extends Controller
     {
         $credentials = $request->only('email', 'password', 'id_akun');
 
-
         $user = akun::where('username', $credentials['email'])->first();
 
         if ($user && password_verify($credentials['password'], $user->password)) {
             $request->session()->put('id_akun', $user->id_akun);
-            if($user-> id_akun === 1){
+            $request->session()->put('action_completed', true);
+            if ($user->id_akun === 1) {
                 return redirect()->route('homeadmin');
-            }else{
+            } else {
                 return redirect()->route('home');
             }
         } else {
-            dd($user);
+            return redirect()->route('login')->with('error', 'Email atau password salah.');
         }
     }
 }
