@@ -70,7 +70,7 @@
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('inputresep') }}">Tambahkan menu
+                                <li><a class="dropdown-item" href="{{ route('tambahmenu') }}">Tambahkan menu
                                         kreasimu</a></li>
                                 <li>
                                 <li><a class="dropdown-item" href="{{ route('homeadmin') }}">Lihat daftar resep</a>
