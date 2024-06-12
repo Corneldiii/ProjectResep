@@ -28,7 +28,7 @@
 
         .bi-hand-thumbs-up {
             color: #F0C29D;
-            /* Warna kulit */
+            /* Warna kulit */   
         }
     </style>
 </head>
