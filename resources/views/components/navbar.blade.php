@@ -8,14 +8,18 @@
         <!-- Navbar untuk perangkat besar -->
         <div class="d-none d-lg-block flex-grow-1">
             <div class="container-fluid d-flex justify-content-center" style="max-width: 900px;">
-                <form class="d-flex w-100" method="GET" action="{{ route('search') }}">
-                    <input class="form-control me-2 rounded-pill" name="cari" style="flex-grow: 1;" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success rounded-pill bg-primary text-light" type="submit" style="width: 150px;">Search</button>
+                <form class="d-flex w-100" method="GET" action="{{ route('searching') }}">
+                    @csrf
+                    <input class="form-control me-2 rounded-pill" name="cari" style="flex-grow: 1;" type="search"
+                        placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success rounded-pill bg-primary text-light" type="submit"
+                        style="width: 150px;">Search</button>
                 </form>
             </div>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -28,7 +32,8 @@
                         <h5 class="mx-3">Kuresep masak</h5>
                     </a>
                 </div>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
             </div>
 
             <div class="offcanvas-body">
@@ -40,23 +45,30 @@
                         <a class="nav-link" href="{{ route('favorite') }}">Favorite</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('tambahmenu') }}">Tambahkan menu kreasimu</a></li>
+                            <li><a class="dropdown-item" href="{{ route('tambahmenu') }}">Tambahkan menu kreasimu</a>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="{{ route('standby') }}">logout</a></li>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item">Logout</button>
+                            </form>
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex w-100" method="GET" action="{{ route('search') }}">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="cari">
+                <form class="d-flex w-100" method="GET" action="{{ route('searching') }}">
+                    @csrf
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        name="cari">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                
+
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#343a40" fill-opacity="1"

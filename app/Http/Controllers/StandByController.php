@@ -61,4 +61,13 @@ class StandByController extends Controller
     {
         //
     }
+
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        $request->session()->put('action_completed', false);
+        // dd($request->session()->all());
+
+        return redirect()->route('standby')->with('message', 'Anda telah logout!!');
+    }
 }
