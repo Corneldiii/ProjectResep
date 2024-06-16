@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('profil', function (Blueprint $table) {
             $table->id('id_profil');
-            $table->string('foto_profil');
+            $table->string('foto_profil')->default('img/FT_Profil/defaultPP.png');
             $table->string('no_telp')-> default('-');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id_akun')->on('akun');

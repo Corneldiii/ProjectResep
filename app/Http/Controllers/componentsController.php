@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\akun;
+use App\Models\profil;
 use Illuminate\Http\Request;
 
-class SignupController extends Controller
+class componentsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('/Signup');
+        
     }
 
     /**
@@ -28,25 +28,7 @@ class SignupController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'email' => 'required|max:255',
-            'password' => 'required|min:8|max:12',
-            'password_confirmation' => 'required|max:12|min:8|same:password',
-        ]);
-
-        $data = [
-            'username' => $request-> input('email'),
-            'password' => bcrypt($request-> input('password')),
-        ];
-
-        
-        // dd($data);
-
-        akun::create($data);
-
-        
-        return redirect()->route('login');
-
+        //
     }
 
     /**

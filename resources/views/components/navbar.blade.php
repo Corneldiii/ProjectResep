@@ -1,3 +1,5 @@
+@props(['profil'])
+
 <nav class="navbar navbar-light shadow bg-light mb-3">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
@@ -38,20 +40,22 @@
 
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('favorite') }}">Favorite</a>
-                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                        <a class="nav-link dropdown-toggle d-flex gap-2" href="#" id="offcanvasNavbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="row">
+                                <div class="col">
+
+                                    <img src="{{ $profil -> foto_profil }}" alt="" style="width: 40px;"
+                                        class="rounded">
+                                </div>
+                                <div class="col">
+                                    <p style="font-size: 0.8rem;">{{ $profil -> username }}</p>
+                                    <p style="font-size: 0.6rem;margin-top: -10px">{{ $profil -> no_telp }}</p>
+                                </div>
+                            </div>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('tambahmenu') }}">Tambahkan menu kreasimu</a>
-                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -61,6 +65,16 @@
                             </form>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('favorite') }}">Favorite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('tambahmenu') }}">Tambahkan menu kreasimu</a>
+                    </li>
+
                 </ul>
                 <form class="d-flex w-100" method="GET" action="{{ route('searching') }}">
                     @csrf

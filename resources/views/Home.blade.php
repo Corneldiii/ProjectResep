@@ -93,8 +93,10 @@
 <body>
 
     {{-- navbar started --}}
+    {{-- {{ dd($profil) }} --}}
 
-    <x-navbar />
+    <x-navbar :profil="$profil" />
+
 
     {{-- section pembukaan --}}
 
@@ -106,6 +108,7 @@
 
 
             @foreach ($data as $items)
+            {{-- {{ dd($items) }} --}}
                 {{-- {{ dd($items) }} --}}
                 <div class="col-sm mt-4">
                     <a href="#" class="text-decoration-none text-dark">

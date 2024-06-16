@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\akun;
+use App\Models\profil;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Constraint\IsEmpty;
 
 class AkunController extends Controller
 {
@@ -72,6 +74,18 @@ class AkunController extends Controller
         if ($user && password_verify($credentials['password'], $user->password)) {
             $request->session()->put('id_akun', $user->id_akun);
             $request->session()->put('action_completed', true);
+
+            $cekprofil = profil::where('user_id', $user->id_akun)->get();
+
+            if($cekprofil->count() == 0){
+                $profil = [
+                    'user_id' => $user -> id_akun,
+                ];
+
+                profil::create($profil);
+        
+            }
+
             if ($user->id_akun === 1) {
                 return redirect()->route('homeadmin');
             } else {

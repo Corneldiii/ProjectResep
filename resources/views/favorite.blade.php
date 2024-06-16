@@ -13,11 +13,11 @@
 </head>
 <style>
     body {
-            background-image: url('/img/bg-web.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+        background-image: url('/img/bg-web.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 </style>
 
 <body>
@@ -26,7 +26,7 @@
     {{-- {{ dd($data) }} --}}
     <section class="container mt-5 overflow-hidden">
         <div class="row">
-            <h1>Hasil resep yang kamu  simpen nihh</h1>
+            <h1>Hasil resep yang kamu simpen nihh</h1>
         </div>
         <div class="row row-cols-md-3 mt-3 mb-3">
 
@@ -64,9 +64,15 @@
                                                         <path
                                                             d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
                                                     </svg>
-                                                    <p class="text-light" style="font-size: 0.6rem;">{{ $items->jumlah_simpan }}</p>
+                                                    <p class="text-light" style="font-size: 0.6rem;">
+                                                        {{ $items->jumlah_simpan }}</p>
                                                 </button>
                                             @endif
+                                        </form>
+                                        <form action="{{ route('deletefav') }}" method="POST"
+                                            class="position-absolute top-0 end-0 m-1">
+                                            @csrf
+                                            @method('delete')
                                             @if ($items->status == 1)
                                                 <input type="hidden" name="id_resep" value="{{ $items->id_resep }}">
                                                 <button type="submit"
@@ -78,7 +84,9 @@
                                                         <path
                                                             d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
                                                     </svg>
-                                                    <p class="text-light" style="font-size: 0.6rem;">{{ $items->jumlah_simpan }}</p>
+                                                    <p class="text-light" style="font-size: 0.6rem;">
+                                                        {{ $items->jumlah_simpan }}</p>
+
                                                 </button>
                                             @endif
                                         </form>
