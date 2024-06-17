@@ -11,6 +11,7 @@ class StandByController extends Controller
      */
     public function index()
     {
+        
         return view('/Standby');
     }
 

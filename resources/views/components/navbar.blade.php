@@ -1,5 +1,6 @@
 @props(['profil'])
 
+{{-- {{ dd($profil) }} --}}
 <nav class="navbar navbar-light shadow bg-light mb-3">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">

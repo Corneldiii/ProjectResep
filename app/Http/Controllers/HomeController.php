@@ -17,6 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $id_akun = session('id_akun');
+        
         if (!$id_akun) {
             return redirect()->route('login')->with('error', 'You need to login first.');
         }
@@ -72,11 +73,12 @@ class HomeController extends Controller
             ->get();
 
             $profil = profil::leftJoin('akun', function ($join) use ($id_akun){
-                $join->on('akun.id_akun', '=', 'profil.user_id')
-                ->where('profil.user_id', $id_akun);
+                $join->on('akun.id_akun', '=', 'profil.user_id');
             })
+            ->where('profil.user_id', $id_akun)
             ->select('akun.username','profil.*')
             ->first();
+            // dd($profil);
 
         return view('/Home', compact('data', 'mostSaved','profil'));
     }
