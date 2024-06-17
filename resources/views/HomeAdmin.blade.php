@@ -122,21 +122,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Favorite</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('tambahmenu') }}">Tambahkan menu
-                                        kreasimu</a></li>
-                                <li><a class="dropdown-item" href="{{ route('homeadmin') }}">Lihat daftar resep</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="{{ route('standby') }}">logout</a></li>
-                            </ul>
+                        <li>
+                            <a class="nav-link" href="{{ route('tambahmenu') }}">Tambahkan menu kreasimu</a>
                         </li>
+                        <li>
+                            <a class="nav-link" href="{{ route('homeadmin') }}">Lihat daftar resep</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{ route('standby') }}">logout</a>
+                        </li>
+
                     </ul>
                     <form class="d-flex mt-3">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -349,8 +344,8 @@
                                         <button type="submit" style="border: none; background: none; padding: 0;"
                                             name="accept">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
-                                                fill="yellow" class="bi bi-check-circle-fill"
-                                                style="cursor: pointer;" viewBox="0 0 16 16">
+                                                fill="yellow" class="bi bi-check-circle-fill" style="cursor: pointer;"
+                                                viewBox="0 0 16 16">
                                                 <path
                                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                                             </svg>
