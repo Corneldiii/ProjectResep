@@ -10,11 +10,11 @@
 DROP TABLE IF EXISTS `daftarresep`;
 CREATE TABLE `daftarresep` (
   `id_daftar` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `asal` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `bahan` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `langkah` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `asal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bahan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `langkah` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
