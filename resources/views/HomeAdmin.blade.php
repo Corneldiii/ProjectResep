@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -75,7 +75,8 @@
             </button>
 
             <!-- Side menu -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <div>
                         <a class="navbar-brand d-flex align-items-center" href="#">
@@ -83,7 +84,8 @@
                             <h5 class="mx-3">Kuresep masak</h5>
                         </a>
                     </div>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
 
                 <div class="offcanvas-body">
@@ -95,14 +97,17 @@
                             <a class="nav-link" href="#">Favorite</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('tambahmenu') }}">Tambahkan menu kreasimu</a></li>
+                                <li><a class="dropdown-item" href="{{ route('tambahmenu') }}">Tambahkan menu
+                                        kreasimu</a></li>
                                 <li><a class="dropdown-item" href="{{ route('homeadmin') }}">Lihat daftar resep</a></li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li><a class="dropdown-item" href="{{ route('standby') }}">logout</a></li>
                             </ul>
                         </li>
@@ -122,9 +127,14 @@
             <h1>Daftar Masukan Resep</h1>
         </div>
         @if (count($data) > 0)
+
+            <!-- Card Resep -->
             @foreach ($data as $items)
                 <div class="row mt-3 mb-3">
-                    <a href="#" class="text-decoration-none text-dark">
+                    <a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal"
+                        data-bs-target="#resepModal" data-nama="{{ $items->nama }}" data-foto="{{ $items->foto }}"
+                        data-asal="{{ $items->asal }}" data-bahan="{{ $items->bahan }}"
+                        data-langkah="{{ $items->langkah }}">
                         <div class="card overflow-hidden shadow" style="height: auto;">
                             <div class="row g-0">
                                 <div class="col-md-3">
@@ -137,30 +147,62 @@
                                     </p>
                                 </div>
                                 <div class="col-md-3 d-flex justify-content-center align-items-center gap-4">
-                                    <form action="{{ route('admin_post') }}" method="POST" class="d-flex justify-content-center align-items-center">
+                                    <form action="{{ route('admin_post') }}" method="POST"
+                                        class="d-flex justify-content-center align-items-center">
                                         @csrf
                                         <input type="hidden" name="id_daftar" value="{{ $items->id_daftar }}">
-                                        <button type="submit" style="border: none; background: none; padding: 0;" name="accept">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="yellow" class="bi bi-check-circle-fill" style="cursor: pointer;" viewBox="0 0 16 16">
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        <button type="submit" style="border: none; background: none; padding: 0;"
+                                            name="accept">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                fill="yellow" class="bi bi-check-circle-fill"
+                                                style="cursor: pointer;" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                                             </svg>
                                         </button>
                                     </form>
-                                    <form action="{{ route('admin_delete', $items->id_daftar) }}" method="POST" class="d-flex justify-content-center align-items-center">
+                                    <form action="{{ route('admin_delete', $items->id_daftar) }}" method="POST"
+                                        class="d-flex justify-content-center align-items-center">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" style="border: none; background: none; padding: 0;" name="decline">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" style="cursor: pointer;" fill="red" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+                                        <button type="submit" style="border: none; background: none; padding: 0;"
+                                            name="decline">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                style="cursor: pointer;" fill="red" class="bi bi-x-circle-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
                                             </svg>
                                         </button>
                                     </form>
                                 </div>
                             </div>
-                        </div>
                     </a>
                 </div>
             @endforeach
+
+            <!-- Modal Rekomendasi Resep -->
+            <div class="modal fade" id="resepModal" tabindex="-1" aria-labelledby="resepModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="resepModalLabel">Detail Resep</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 id="modalNama" class="text-center mb-3"></h5>
+                            <img id="modalFoto" src="" class="img-fluid mb-3" alt="Foto Resep">
+                            <p><strong>Asal:</strong> <span id="modalAsal"></span></p>
+                            <p><strong>Bahan:</strong></p>
+                            <ul id="modalBahan"></ul>
+                            <p><strong>Langkah:</strong></p>
+                            <ol id="modalLangkah"></ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @else
             <h5 class="mt-5 w-100">Belum ada data resep yang masuk nih...</h5>
         @endif
@@ -233,8 +275,59 @@
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+    <!-- JavaScript untuk Menampilkan Modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const resepModal = document.getElementById('resepModal');
+            resepModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+
+                // Ambil data dari atribut data-*
+                const nama = button.getAttribute('data-nama');
+                const asal = button.getAttribute('data-asal');
+                const bahan = button.getAttribute('data-bahan');
+                const langkah = button.getAttribute('data-langkah');
+                const foto = button.getAttribute('data-foto');
+
+                // Debugging logs
+                console.log('Nama:', nama);
+                console.log('Asal:', asal);
+                console.log('Bahan:', bahan);
+                console.log('Langkah:', langkah);
+                console.log('Foto:', foto);
+
+                // Temukan elemen modal
+                const modalFoto = document.getElementById('modalFoto');
+                const modalNama = document.getElementById('modalNama');
+                const modalAsal = document.getElementById('modalAsal');
+                const modalBahan = document.getElementById('modalBahan');
+                const modalLangkah = document.getElementById('modalLangkah');
+
+                // Fungsi untuk memformat teks bahan menjadi daftar
+                function formatBahan(bahan) {
+                    return bahan.split('-').filter(item => item.trim() !== '').map(item =>
+                        `<li>${item.trim()}</li>`).join('');
+                }
+
+                // Fungsi untuk memformat teks langkah menjadi daftar
+                function formatLangkah(langkah) {
+                    return langkah.split(/\d+\./).filter(item => item.trim() !== '').map(item =>
+                        `<li>${item.trim()}</li>`).join('');
+                }
+
+                // Isi modal dengan data
+                modalFoto.src = foto;
+                modalNama.textContent = nama;
+                modalAsal.textContent = asal;
+                modalBahan.innerHTML = formatBahan(bahan);
+                modalLangkah.innerHTML = formatLangkah(langkah);
+            });
+        });
+    </script>
+
 </body>
 
 </html>
