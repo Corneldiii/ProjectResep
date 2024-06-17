@@ -55,7 +55,33 @@
         .nav-link:hover::after {
             width: 100%;
         }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .card img {
+                height: 150px;
+            }
+        }
     </style>
+
 </head>
 
 <body>
@@ -122,12 +148,11 @@
     </nav>
 
     <!-- Section Pembukaan -->
-    <section class="container mt-5 overflow-hidden">
+    {{-- <section class="container mt-5 overflow-hidden">
         <div class="row">
             <h1>Daftar Masukan Resep</h1>
         </div>
         @if (count($data) > 0)
-
             <!-- Card Resep -->
             @foreach ($data as $items)
                 <div class="row mt-3 mb-3">
@@ -206,7 +231,178 @@
         @else
             <h5 class="mt-5 w-100">Belum ada data resep yang masuk nih...</h5>
         @endif
-    </section>
+    </section> --}}
+
+    {{-- <main class="container mt-5 overflow-hidden">
+        <section>
+            <div class="row">
+                <h1>Daftar Masukan Resep</h1>
+            </div>
+            @if (count($data) > 0)
+                <div class="card-container">
+
+                    <!-- Card Resep -->
+                    @foreach ($data as $items)
+                        <div class="col-md-4">
+                            <div class="card overflow-hidden shadow">
+                                <a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal"
+                                    data-bs-target="#resepModal" data-nama="{{ $items->nama }}"
+                                    data-foto="{{ $items->foto }}" data-asal="{{ $items->asal }}"
+                                    data-bahan="{{ $items->bahan }}" data-langkah="{{ $items->langkah }}">
+                                    <img src="{{ $items->foto }}" class="card-img-top" alt="{{ $items->nama }}">
+                                    <div class="card-body card-content">
+                                        <h6 class="card-title">{{ $items->nama }}</h6>
+                                        <p class="text-sm-left m-2" style="font-size: 0.8rem;">
+                                            {{ Str::limit($items->bahan, 150) }}
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="card-footer">
+                                    <form action="{{ route('admin_post') }}" method="POST" class="d-inline">
+                                        @csrf
+                                        <input type="hidden" name="id_daftar" value="{{ $items->id_daftar }}">
+                                        <button type="submit" style="border: none; background: none; padding: 0;"
+                                            name="accept">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                fill="yellow" class="bi bi-check-circle-fill"
+                                                style="cursor: pointer;" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('admin_delete', $items->id_daftar) }}" method="POST"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" style="border: none; background: none; padding: 0;"
+                                            name="decline">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                style="cursor: pointer;" fill="red" class="bi bi-x-circle-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 0 0-.708.708L7.293 8 4.646 10.646a.5.5 0 1 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    
+                    <!-- Modal Rekomendasi Resep -->
+                    <div class="modal fade" id="resepModal" tabindex="-1" aria-labelledby="resepModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="resepModalLabel">Detail Resep</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 id="modalNama" class="text-center mb-3"></h5>
+                                    <img id="modalFoto" src="" class="img-fluid mb-3" alt="Foto Resep">
+                                    <p><strong>Asal:</strong> <span id="modalAsal"></span></p>
+                                    <p><strong>Bahan:</strong></p>
+                                    <ul id="modalBahan"></ul>
+                                    <p><strong>Langkah:</strong></p>
+                                    <ol id="modalLangkah"></ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @else
+                <p>Tidak ada data resep yang tersedia.</p>
+            @endif
+        </section>
+    </main> --}}
+
+    <main class="container mt-5 overflow-hidden">
+        <section>
+            <div class="row">
+                <h1>Daftar Masukan Resep</h1>
+            </div>
+            @if (count($data) > 0)
+                <div class="row">
+                    <!-- Card Resep -->
+                    @foreach ($data as $items)
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card overflow-hidden shadow">
+                                <a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal"
+                                    data-bs-target="#resepModal" data-nama="{{ $items->nama }}"
+                                    data-foto="{{ $items->foto }}" data-asal="{{ $items->asal }}"
+                                    data-bahan="{{ $items->bahan }}" data-langkah="{{ $items->langkah }}">
+                                    <img src="{{ $items->foto }}" class="card-img-top" alt="{{ $items->nama }}">
+                                    <div class="card-body card-content">
+                                        <h6 class="card-title">{{ $items->nama }}</h6>
+                                        <p class="text-sm-left m-2" style="font-size: 0.8rem;">
+                                            {{ Str::limit($items->bahan, 150) }}
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="card-footer">
+                                    <form action="{{ route('admin_post') }}" method="POST" class="d-inline">
+                                        @csrf
+                                        <input type="hidden" name="id_daftar" value="{{ $items->id_daftar }}">
+                                        <button type="submit" style="border: none; background: none; padding: 0;"
+                                            name="accept">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                fill="yellow" class="bi bi-check-circle-fill"
+                                                style="cursor: pointer;" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('admin_delete', $items->id_daftar) }}" method="POST"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" style="border: none; background: none; padding: 0;"
+                                            name="decline">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                                style="cursor: pointer;" fill="red" class="bi bi-x-circle-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 0 0-.708.708L7.293 8 4.646 10.646a.5.5 0 1 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    <!-- Modal Rekomendasi Resep -->
+                    <div class="modal fade" id="resepModal" tabindex="-1" aria-labelledby="resepModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="resepModalLabel">Detail Resep</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 id="modalNama" class="text-center mb-3"></h5>
+                                    <img id="modalFoto" src="" class="img-fluid mb-3" alt="Foto Resep">
+                                    <p><strong>Asal:</strong> <span id="modalAsal"></span></p>
+                                    <p><strong>Bahan:</strong></p>
+                                    <ul id="modalBahan"></ul>
+                                    <p><strong>Langkah:</strong></p>
+                                    <ol id="modalLangkah"></ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @else
+                <p class="text-center">Belum ada daftar menu</p>
+            @endif
+        </section>
+    </main>
+
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="#ffd88f" fill-opacity="1"
