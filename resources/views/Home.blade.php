@@ -20,6 +20,7 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+
         .scroll-container {
             overflow-x: auto;
             white-space: nowrap;
@@ -97,6 +98,20 @@
 
     <x-navbar :profil="$profil" />
 
+    @if (session('message'))
+        <div class="toast" style="position: fixed; top: 20px; right: 20px; z-index: 1050;">
+            <div class="toast-header">
+                <strong class="mr-auto">Pesan</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                {{ session('message') }}
+            </div>
+        </div>
+    @endif
+
 
     {{-- section pembukaan --}}
 
@@ -108,7 +123,7 @@
 
 
             @foreach ($data as $items)
-            {{-- {{ dd($items) }} --}}
+                {{-- {{ dd($items) }} --}}
                 {{-- {{ dd($items) }} --}}
                 <div class="col-sm mt-4">
                     <a href="#" class="text-decoration-none text-dark">

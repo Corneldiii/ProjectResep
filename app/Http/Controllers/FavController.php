@@ -20,7 +20,7 @@ class FavController extends Controller
                 ->where('favorit.id_akun', $id_akun);
         })
         ->select('resep.*', 'favorit.status')
-        ->where('favorit.id_akun', $id_akun) // Hanya memilih resep yang disimpan oleh user yang login
+        ->where('favorit.id_akun', $id_akun) 
         ->orderByDesc('created_at')
         ->take(9)
         ->with(['submittedByUser', 'favoritedByUsers' => function ($query) use ($id_akun) {

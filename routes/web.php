@@ -4,6 +4,7 @@ use App\Http\Middleware\CheckSession;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FavController;
 use App\Http\Controllers\AkunController;
+use App\Http\Controllers\componentsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SignupController;
@@ -39,7 +40,9 @@ Route::delete('/HomeAdmin/{id}', [DaftarResepController::class, 'destroy']) -> n
 
 
 Route::get('/standby', [StandByController::class, 'index'])->name('standby');
-Route::post('/standby', [StandByController::class, 'logout'])->name('logout');
+Route::post('/standby/logout', [StandByController::class, 'logout'])->name('logout');
+
+Route::post('/Component/navbar', [componentsController::class, 'update'])->name('update_profil');
 
 
 Route::get('/search',[SearchController::class, 'index'])->middleware(CheckSession::class)->name('search');
