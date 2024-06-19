@@ -19,6 +19,17 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            
+        }
+        .card-title:hover {
+        color: orange;
+        }   
+        .card-img-top {
+        transition: transform 0.2s;
+        }
+
+        .card-img-top:hover {
+        transform: scale(1.05); /* Membesarkan gambar 1.1x dari ukuran aslinya */
         }
 
         .bi-emoji-smile-fill {
@@ -119,7 +130,7 @@
                 <div class="card mb-4 shadow">
                     <img src="/img/artikel_1_standby.png" class="card-img-top img-fluid" alt="Article Image">
                     <div class="card-body">
-                        <h5 class="card-title">Cari dan temukan resep dari Kuresep Masak</h5>
+                        <h5 class="card-title" >Cari dan temukan resep dari Kuresep Masak</h5>
                     </div>
                 </div>
             </div>
@@ -219,10 +230,52 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 my-5 mx-auto">
-                    <div class="Foodpic-info">
-                        <h1>Share Foodpic..</h1>
-                        <p>Dengan melalui Foodpic, kamu dapat membagikan berbagi macam kreasi keberhasilan dan
+                <div class="col-sm-4 my-5">
+                    <div class="card mb-4 shadow">
+                        <img src="/img/Lumpia semarang.jpg" class="card-img-top" alt="Lumpia Semarang">
+                        <div class="card-body">
+                            <p class="card-text">Kreasikan Momennya dengan Kelezatan Tiada Tanding, Lumpia Semarang Siap Menyulap 
+                                Setiap Gigitan menjadi Petualangan Rasa yang Menggugah Selera. Nikmati Kombinasi Isi yang Melimpah 
+                                dari Rebung Segar, Telur, Udang, Daging Pilihan dalam Kulit yang Tipis dan 
+                                Renyah Menjadi Spesial! <span
+                                    class="">🌯</span></p>
+                            <h6 class="card-subtitle mb-2">Lumpia Semarang</h6>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 ">
+                    <div class="card mb-4 shadow">
+                        <img src="/img/Onde onde.jpg" class="card-img-top" alt="Onde onde">
+                        <div class="card-body">
+                            <p class="card-text">Kelezatan yang Meletup, Sensasi Gula Aren yang Menggoda,Onde Onde Siap 
+                                Membuat Lidah Anda Bergoyang! Nikmati Setiap Gigitannya yang Gurih di Luar, Manis di Dalam.
+                                 Segera Rasakan Kenikmatannya dan Nikmati Sensasi Khasnya yang Tidak Terlupakan!! <span class="">🟤</span></p>
+                            <h6 class="card-subtitle mb-2">Onde-onde</h6>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 my-5">
+                    <div class="card mb-4 shadow">
+                        <img src="/img/Dadar Gulung.jpg" class="card-img-top" alt="Dadar Gulung">
+                        <div class="card-body">
+                            <p class="card-text">Kesenangan yang Bergulung dalam Setiap Gigitan! 🟢 Dadar Gulung Menggoda 
+                                dengan Kelembutan Kelapa Parut dan Manisnya Gula Merah. Rasakan Sensasi Nikmatnya yang Membuat
+                                 Lidah Bergoyang dan Hati Tersenyum. Sajikan Dadar Gulung, Sajikan Kebahagiaan yang Tiada Tara! <span
+                                    class="">🥥</span></p>
+                            <h6 class="card-subtitle mb-2">Dadar Gulung</h6>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-4 my-5 mx-auto">
+                <div class="card mb-4 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Share Foodpic..</h5>
+                        <p class="card-text">Dengan melalui Foodpic, kamu dapat membagikan berbagi macam kreasi keberhasilan dan
                             pengalamanmu untuk resep yang sudah kamu coba di Kuresep Masak.</p>
                     </div>
                 </div>
