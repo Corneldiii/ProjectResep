@@ -73,6 +73,21 @@
             max-width: 45%; /* Gambar akan menyesuaikan lebar kontainer */
             height: auto; /* Pertahankan rasio aspek gambar */
         }
+
+        .login-button {
+            margin-top: 20px;
+        }
+        .login-button a {
+            text-decoration: none;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
     </style>
 </head>
 
@@ -124,45 +139,13 @@
         <h2>Kuresep Masak</h2>
         <h1>Mencari resep masakan yang Lezat dan Mudah dibuat di rumah?</h1>
         <p>Temukan berbagai macam resep yang akan memanjakan lidah Anda. Dari makanan tradisional hingga kuliner Modern semua tersedia di sini!</p>
+        <div class="login-button">
+            <a class="nav-link" href="{{ route('login') }}">Login Sekarang</a>
+        </div>
     </div>
+    
     <img src="/img/bakso_standby.png" alt="Bakso Standby">
 </section>
-
-    <!-- Section Pembukaan -->
-    <section class="pembukaan d-flex justify-content-center align-items-center mt-4 p-3">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('/img/gudeg standby_1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('/img/soto Standby_1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('/img/ayam kalasan_1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('/img/standby makanan_1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
-                </div>
-
-            </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
-                data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
-                data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
-        </div>
-    </section>
 
     <!-- Artikel Section -->
     <div class="container mt-5">
