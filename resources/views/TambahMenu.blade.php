@@ -27,7 +27,7 @@
 
     {{-- navbar started --}}
 
-    <x-navbar />
+    <x-navbar :profil="$profil" />
 
 
     <section class="d-flex justify-content-center align-item-center m-5">

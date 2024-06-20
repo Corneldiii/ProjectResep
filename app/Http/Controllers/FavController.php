@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\resep;
+use App\Models\profil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -31,7 +32,14 @@ class FavController extends Controller
         }])
         ->get();
 
-        return view('favorite', compact('data'));
+        $profil = profil::leftJoin('akun', function ($join) use ($id_akun){
+            $join->on('akun.id_akun', '=', 'profil.user_id');
+        })
+        ->where('profil.user_id', $id_akun)
+        ->select('akun.username','profil.*')
+        ->first();
+
+        return view('favorite', compact('data','profil'));
     }
 
     /**

@@ -21,7 +21,7 @@
 </style>
 
 <body>
-    <x-navbar />
+    <x-navbar :profil="$profil" />
 
     {{-- {{ dd($data) }} --}}
     <section class="container mt-5 overflow-hidden">
