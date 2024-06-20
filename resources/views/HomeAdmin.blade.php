@@ -14,6 +14,18 @@
     <title>Kuresep masak</title>
 
     <style>
+        .modal-body img {
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 400px;
+            /* Adjust this as needed */
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         body {
             background-image: url('/img/bg-web.png');
             background-size: cover;
@@ -197,6 +209,7 @@
                             </div>
                         </div>
                     @endforeach
+
                     <!-- Modal Rekomendasi Resep -->
                     <div class="modal fade" id="resepModal" tabindex="-1" aria-labelledby="resepModalLabel"
                         aria-hidden="true">
