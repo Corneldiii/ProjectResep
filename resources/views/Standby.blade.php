@@ -20,17 +20,20 @@
             background-repeat: no-repeat;
             background-position: center;
             font-family: 'Arial', sans-serif;
-            
+
         }
+
         .card-title:hover {
-        color: orange;
-        }   
+            color: orange;
+        }
+
         .card-img-top {
-        transition: transform 0.2s;
+            transition: transform 0.2s;
         }
 
         .card-img-top:hover {
-        transform: scale(1.05); /* Membesarkan gambar 1.1x dari ukuran aslinya */
+            transform: scale(1.05);
+            /* Membesarkan gambar 1.1x dari ukuran aslinya */
         }
 
         .bi-emoji-smile-fill {
@@ -40,43 +43,54 @@
 
         .bi-hand-thumbs-up {
             color: #F0C29D;
-            /* Warna kulit */   
+            /* Warna kulit */
         }
 
         .custom-section {
+            width: 100%;
+            height: 100vh;
             display: flex;
-            align-items: center;
+            /* align-items: center; */
             justify-content: space-between;
-            padding: 10vh 5%;
+            padding: 40px;
         }
+
         .recipe-text {
             max-width: 45%;
-            color: #000; /* Warna hitam untuk teks */
-            font-family: 'Arial', sans-serif; /* Font utama */
+            color: #000;
+            /* Warna hitam untuk teks */
+            font-family: 'Arial', sans-serif;
+            /* Font utama */
         }
+
         .recipe-text h2 {
             color: red;
             font-size: 24px;
             font-weight: bold;
         }
+
         .recipe-text h1 {
             color: #000;
             font-size: 48px;
             font-weight: bold;
         }
+
         .recipe-text p {
             color: #555;
             font-size: 16px;
         }
 
         .custom-section img {
-            max-width: 45%; /* Gambar akan menyesuaikan lebar kontainer */
-            height: auto; /* Pertahankan rasio aspek gambar */
+            max-width: 45%;
+            /* Gambar akan menyesuaikan lebar kontainer */
+            height: auto;
+            /* Pertahankan rasio aspek gambar */
         }
 
         .login-button {
             margin-top: 20px;
         }
+
         .login-button a {
             text-decoration: none;
             background-color: #000;
@@ -87,7 +101,6 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             display: inline-block;
         }
-
     </style>
 </head>
 
@@ -134,18 +147,19 @@
 
 
     <!-- Bagian Section dengan Gambar dan Teks -->
-<section class="custom-section">
-    <div class="recipe-text">
-        <h2>Kuresep Masak</h2>
-        <h1>Mencari resep masakan yang Lezat dan Mudah dibuat di rumah?</h1>
-        <p>Temukan berbagai macam resep yang akan memanjakan lidah Anda. Dari makanan tradisional hingga kuliner Modern semua tersedia di sini!</p>
-        <div class="login-button">
-            <a class="nav-link" href="{{ route('login') }}">Login Sekarang</a>
+    <section class="custom-section">
+        <div class="recipe-text">
+            <h2>Kuresep Masak</h2>
+            <h1>Mencari resep masakan yang Lezat dan Mudah dibuat di rumah?</h1>
+            <p>Temukan berbagai macam resep yang akan memanjakan lidah Anda. Dari makanan tradisional hingga kuliner
+                Modern semua tersedia di sini!</p>
+            <div class="login-button">
+                <a class="nav-link" href="{{ route('login') }}">Login Sekarang</a>
+            </div>
         </div>
-    </div>
-    
-    <img src="/img/bakso_standby.png" alt="Bakso Standby">
-</section>
+
+        <img src="/img/bakso_standby.png" alt="Bakso Standby">
+    </section>
 
     <!-- Artikel Section -->
     <div class="container mt-5">
@@ -154,7 +168,7 @@
                 <div class="card mb-4 shadow">
                     <img src="/img/artikel_1_standby.png" class="card-img-top img-fluid" alt="Article Image">
                     <div class="card-body">
-                        <h5 class="card-title" >Cari dan temukan resep dari Kuresep Masak</h5>
+                        <h5 class="card-title">Cari dan temukan resep dari Kuresep Masak</h5>
                     </div>
                 </div>
             </div>
@@ -258,11 +272,12 @@
                     <div class="card mb-4 shadow">
                         <img src="/img/Lumpia semarang.jpg" class="card-img-top" alt="Lumpia Semarang">
                         <div class="card-body">
-                            <p class="card-text">Kreasikan Momennya dengan Kelezatan Tiada Tanding, Lumpia Semarang Siap Menyulap 
-                                Setiap Gigitan menjadi Petualangan Rasa yang Menggugah Selera. Nikmati Kombinasi Isi yang Melimpah 
-                                dari Rebung Segar, Telur, Udang, Daging Pilihan dalam Kulit yang Tipis dan 
-                                Renyah Menjadi Spesial! <span
-                                    class="">🌯</span></p>
+                            <p class="card-text">Kreasikan Momennya dengan Kelezatan Tiada Tanding, Lumpia Semarang
+                                Siap Menyulap
+                                Setiap Gigitan menjadi Petualangan Rasa yang Menggugah Selera. Nikmati Kombinasi Isi
+                                yang Melimpah
+                                dari Rebung Segar, Telur, Udang, Daging Pilihan dalam Kulit yang Tipis dan
+                                Renyah Menjadi Spesial! <span class="">🌯</span></p>
                             <h6 class="card-subtitle mb-2">Lumpia Semarang</h6>
 
                         </div>
@@ -272,9 +287,11 @@
                     <div class="card mb-4 shadow">
                         <img src="/img/Onde onde.jpg" class="card-img-top" alt="Onde onde">
                         <div class="card-body">
-                            <p class="card-text">Kelezatan yang Meletup, Sensasi Gula Aren yang Menggoda,Onde Onde Siap 
-                                Membuat Lidah Anda Bergoyang! Nikmati Setiap Gigitannya yang Gurih di Luar, Manis di Dalam.
-                                 Segera Rasakan Kenikmatannya dan Nikmati Sensasi Khasnya yang Tidak Terlupakan!! <span class="">🟤</span></p>
+                            <p class="card-text">Kelezatan yang Meletup, Sensasi Gula Aren yang Menggoda,Onde Onde Siap
+                                Membuat Lidah Anda Bergoyang! Nikmati Setiap Gigitannya yang Gurih di Luar, Manis di
+                                Dalam.
+                                Segera Rasakan Kenikmatannya dan Nikmati Sensasi Khasnya yang Tidak Terlupakan!! <span
+                                    class="">🟤</span></p>
                             <h6 class="card-subtitle mb-2">Onde-onde</h6>
 
                         </div>
@@ -284,22 +301,25 @@
                     <div class="card mb-4 shadow">
                         <img src="/img/Dadar Gulung.jpg" class="card-img-top" alt="Dadar Gulung">
                         <div class="card-body">
-                            <p class="card-text">Kesenangan yang Bergulung dalam Setiap Gigitan! 🟢 Dadar Gulung Menggoda 
-                                dengan Kelembutan Kelapa Parut dan Manisnya Gula Merah. Rasakan Sensasi Nikmatnya yang Membuat
-                                 Lidah Bergoyang dan Hati Tersenyum. Sajikan Dadar Gulung, Sajikan Kebahagiaan yang Tiada Tara! <span
-                                    class="">🥥</span></p>
+                            <p class="card-text">Kesenangan yang Bergulung dalam Setiap Gigitan! 🟢 Dadar Gulung
+                                Menggoda
+                                dengan Kelembutan Kelapa Parut dan Manisnya Gula Merah. Rasakan Sensasi Nikmatnya yang
+                                Membuat
+                                Lidah Bergoyang dan Hati Tersenyum. Sajikan Dadar Gulung, Sajikan Kebahagiaan yang Tiada
+                                Tara! <span class="">🥥</span></p>
                             <h6 class="card-subtitle mb-2">Dadar Gulung</h6>
 
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="col-md-4 my-5 mx-auto">
                 <div class="card mb-4 shadow">
                     <div class="card-body">
                         <h5 class="card-title">Share Foodpic..</h5>
-                        <p class="card-text">Dengan melalui Foodpic, kamu dapat membagikan berbagi macam kreasi keberhasilan dan
+                        <p class="card-text">Dengan melalui Foodpic, kamu dapat membagikan berbagi macam kreasi
+                            keberhasilan dan
                             pengalamanmu untuk resep yang sudah kamu coba di Kuresep Masak.</p>
                     </div>
                 </div>
@@ -377,7 +397,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    
+
     <script>
         $(document).ready(function() {
             $('.toast').toast('show');

@@ -25,7 +25,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
 
         body {
             background-image: url('/img/bg-web.png');
@@ -64,6 +64,25 @@
         }
 
         .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #000;
+            /* Warna scrollbar */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
 
@@ -299,8 +318,8 @@
                         <div class="card h-100 overflow-hidden shadow">
                             <div class="row">
 
-                                 {{-- mulai dari sini --}}
-                                 <div class="col-8">
+                                {{-- mulai dari sini --}}
+                                <div class="col-8">
                                     <h6 class="card-title d-flex justify-content-center align-items-center">
                                         {{ $items->nama }}</h6>
                                     <p class="text-sm-left m-2" style="font-size: 0.8rem;">

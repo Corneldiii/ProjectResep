@@ -161,7 +161,7 @@
                         <label for="phone" class="form-label">Nomor HP</label>
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1">+62</span>
-                            <input type="text" id="phone" class="form-control" value="{{ $profil->no_telp }}" name="NomorHP">
+                            <input type="text" id="phone" class="form-control" value="{{ substr($profil->no_telp, 1) }}" name="NomorHP">
                         </div>
                     </div>
                     <div class="mb-3">

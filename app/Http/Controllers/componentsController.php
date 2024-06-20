@@ -51,11 +51,12 @@ class componentsController extends Controller
     public function update(Request $request)
     {
         $id_akun = session('id_akun');
+        // dd($id_akun);
         
         $request->validate([
             'newPP' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'NomorHP' => 'required|digits:11'
-            
+            'NomorHP' => 'required|digits:11',
+            // dd('aman')
         ]);
         
         $nomorHp = '0' . $request->input('NomorHP');
@@ -71,7 +72,7 @@ class componentsController extends Controller
             $fotoPath = 'img/FT_Profil/' . $fotoName;
 
             if (!file_exists(public_path('img/FT_Profil'))) {
-                mkdir(public_path('img/FT_Profil'), 0777, true); // Membuat direktori yang benar
+                mkdir(public_path('img/FT_Profil'), 0777, true);
             }
 
             $foto->move(public_path('img/FT_Profil'), $fotoName);
