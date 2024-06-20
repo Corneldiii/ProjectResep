@@ -19,6 +19,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            font-family: 'Arial', sans-serif;
             
         }
         .card-title:hover {
@@ -43,15 +44,35 @@
         }
 
         .custom-section {
-            text-align: center; /* Pusatkan gambar secara horizontal */
-            padding: 20px; /* Tambahkan padding untuk memberikan ruang sekitar gambar */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
         }
-        .custom-section img {
-            max-width: 30%; /* Gambar akan menyesuaikan lebar kontainer */
-            height: auto; /* Pertahankan rasio aspek gambar */
-            margin-left: 700px;
+        .recipe-text {
+            max-width: 50%;
+            color: #000; /* Warna hitam untuk teks */
+            font-family: 'Arial', sans-serif; /* Font utama */
+        }
+        .recipe-text h2 {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .recipe-text h1 {
+            color: #000;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .recipe-text p {
+            color: #555;
+            font-size: 16px;
         }
 
+        .custom-section img {
+            max-width: 45%; /* Gambar akan menyesuaikan lebar kontainer */
+            height: auto; /* Pertahankan rasio aspek gambar */
+        }
     </style>
 </head>
 
@@ -97,7 +118,13 @@
     @endif
 
 
-    <section class="custom-section">
+    <!-- Bagian Section dengan Gambar dan Teks -->
+<section class="custom-section">
+    <div class="recipe-text">
+        <h2>Kuresep Masak</h2>
+        <h1>Mencari resep masakan yang Lezat dan Mudah dibuat di rumah?</h1>
+        <p>Temukan berbagai macam resep yang akan memanjakan lidah Anda. Dari makanan tradisional hingga kuliner Modern semua tersedia di sini!</p>
+    </div>
     <img src="/img/bakso_standby.png" alt="Bakso Standby">
 </section>
 
