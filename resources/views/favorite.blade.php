@@ -38,6 +38,7 @@
                         <a href="#" class="text-decoration-none text-dark">
                             <div class="card h-100 overflow-hidden shadow">
                                 <div class="row">
+
                                     <div class="col-8">
                                         <h6 class="card-title d-flex justify-content-center align-items-center">
                                             {{ $items->nama }}</h6>
@@ -48,6 +49,8 @@
                                             <p class="text-sm-left m-2" style="font-size: 0.8rem;">selengkapnya>></p>
                                         </a>
                                     </div>
+
+
                                     <div class="col-4">
                                         <img src="{{ $items->foto }}" class="card-img-top">
                                         <form action="{{ route('favpost') }}" method="POST"
@@ -148,6 +151,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+
+    
 </body>
 
 </html>

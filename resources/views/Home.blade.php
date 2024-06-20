@@ -14,6 +14,19 @@
     <title>Kuresep masak</title>
 
     <style>
+        .modal-body img {
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 400px;
+            /* Adjust this as needed */
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+
         body {
             background-image: url('/img/bg-web.png');
             background-size: cover;
@@ -89,6 +102,7 @@
 
         /* Sampe sini */
     </style>
+
 </head>
 
 <body>
@@ -285,20 +299,22 @@
                         <div class="card h-100 overflow-hidden shadow">
                             <div class="row">
 
-                                {{-- Disini --}}
-                                <div class="col-8">
+                                 {{-- mulai dari sini --}}
+                                 <div class="col-8">
                                     <h6 class="card-title d-flex justify-content-center align-items-center">
                                         {{ $items->nama }}</h6>
                                     <p class="text-sm-left m-2" style="font-size: 0.8rem;">
-                                        {{ Str::limit($items->bahan, 50) }}
-                                    </p>
-                                    <a href="">
+                                        {{ Str::limit($items->bahan, 50) }}</p>
+                                    <a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal"
+                                        data-bs-target="#resepModal" data-nama="{{ $items->nama }}"
+                                        data-asal="{{ $items->asal }}" data-bahan="{{ $items->bahan }}"
+                                        data-langkah="{{ $items->langkah }}" data-foto="{{ $items->foto }}">
                                         <p class="text-sm-left m-2" style="font-size: 0.8rem;">selengkapnya>></p>
                                     </a>
                                 </div>
 
                                 {{-- Modal Bayak Disukai --}}
-                                {{-- <div class="modal fade" id="resepModal" tabindex="-1"
+                                <div class="modal fade" id="resepModal" tabindex="-1"
                                     aria-labelledby="resepModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-scrollable">
                                         <div class="modal-content">
@@ -319,7 +335,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
 
 
                                 <div class="col-4">
