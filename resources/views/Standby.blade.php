@@ -47,12 +47,11 @@
         }
 
         .custom-section {
-            width: 100%;
-            height: 100vh;
+            margin-top: -100px;
             display: flex;
-            /* align-items: center; */
+            align-items: center;
             justify-content: space-between;
-            padding: 40px;
+            padding: 10vh 5%;
         }
 
         .recipe-text {
@@ -101,6 +100,23 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             display: inline-block;
         }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #000;
+            /* Warna scrollbar */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
     </style>
 </head>
 

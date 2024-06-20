@@ -20,22 +20,22 @@
     }
 
     ::-webkit-scrollbar {
-            width: 8px;
-        }
+        width: 8px;
+    }
 
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 
-        ::-webkit-scrollbar-thumb {
-            background: #000;
-            /* Warna scrollbar */
-            border-radius: 10px;
-        }
+    ::-webkit-scrollbar-thumb {
+        background: #000;
+        /* Warna scrollbar */
+        border-radius: 10px;
+    }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 </style>
 
 <body>
@@ -170,7 +170,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
-    
+
 </body>
 
 </html>
