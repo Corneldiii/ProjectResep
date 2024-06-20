@@ -12,9 +12,9 @@ use App\Http\Controllers\StandByController;
 use App\Http\Controllers\InputResepController;
 use App\Http\Controllers\DaftarResepController;
 
-Route::get('/', function () {
-    return view('Standby');
-});
+// Route::get('/', function () {
+//     return view('Standby');
+// });
 
 
 Route::get('/login', [AkunController::class, 'index'])->name('login');
@@ -39,7 +39,7 @@ Route::post('/HomeAdmin', [DaftarResepController::class, 'store']) -> name('admi
 Route::delete('/HomeAdmin/{id}', [DaftarResepController::class, 'destroy']) -> name('admin_delete');
 
 
-Route::get('/standby', [StandByController::class, 'index'])->name('standby');
+Route::get('/', [StandByController::class, 'index'])->name('standby');
 Route::post('/standby/logout', [StandByController::class, 'logout'])->name('logout');
 
 Route::post('/Component/navbar', [componentsController::class, 'update'])->name('update_profil');

@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\akun;
 use App\Models\profil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use PHPUnit\Framework\Constraint\IsEmpty;
 
 class AkunController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index()
@@ -83,13 +84,14 @@ class AkunController extends Controller
                 ];
 
                 profil::create($profil);
-        
             }
 
+            $cookie = Cookie::make('user_id', $user -> id_akun, 10);
+
             if ($user->id_akun === 1) {
-                return redirect()->route('homeadmin');
+                return redirect()->route('homeadmin')->cookie($cookie);;
             } else {
-                return redirect()->route('home');
+                return redirect()->route('home')->cookie($cookie);;
             }
         } else {
             return redirect()->route('login')->with('error', 'Email atau password salah.');

@@ -141,7 +141,10 @@
                             <a class="nav-link" href="{{ route('homeadmin') }}">Lihat daftar resep</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{ route('standby') }}">logout</a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item">Logout</button>
+                            </form>
                         </li>
 
                     </ul>
@@ -241,7 +244,7 @@
 
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#ffd88f" fill-opacity="1"
+        <path fill="#343a40" fill-opacity="1"
             d="M0,160L48,181.3C96,203,192,245,288,224C384,203,480,117,576,112C672,107,768,181,864,224C960,267,1056,277,1152,250.7C1248,224,1344,160,1392,128L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
         </path>
     </svg>

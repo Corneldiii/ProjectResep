@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class StandByController extends Controller
 {
@@ -11,8 +12,22 @@ class StandByController extends Controller
      */
     public function index()
     {
-        
-        return view('/Standby');
+
+        $request = request();
+        // dd('cek');
+
+        if ($request->hasCookie('user_id')) {
+            $userId = $request->cookie('user_id');
+            // dd($userId);
+
+            if ((int) $userId === 1) {
+                return redirect()->route('homeadmin');
+            } else {
+                return redirect()->route('home');
+            }
+        }
+
+        return view('Standby');
     }
 
     /**
@@ -63,12 +78,18 @@ class StandByController extends Controller
         //
     }
 
+    private function deleteUserIdCookie()
+    {
+        return Cookie::forget('user_id');
+    }
+
     public function logout(Request $request)
     {
+        $cookie = $this->deleteUserIdCookie();
+
         $request->session()->flush();
         $request->session()->put('action_completed', false);
-        // dd($request->session()->all());
 
-        return redirect()->route('standby')->with('message', 'Anda telah logout!!');
+        return redirect()->route('standby')->withCookie($cookie)->with('message', 'Anda telah logout!!');
     }
 }
