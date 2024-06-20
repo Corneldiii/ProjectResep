@@ -328,6 +328,43 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-4 ">
+                    <div class="card mb-4 shadow">
+                        <img src="/img/Pempek Palembang.jpg" class="card-img-top" alt="Pempek Palembang">
+                        <div class="card-body">
+                            <p class="card-text">Nikmati Kelezatan Pempek Palembang yang Meletup! Sensasi Ikan yang Menggoda dengan
+                                 Kuah Cuko yang Khas, Siap Membuat Lidah Anda Bergoyang! Rasakan Kelembutan Pempeknya yang Gurih di Luar,
+                                dan Kenikmatan Cuko yang Pedas Asam. Cicipi dan Nikmati Sensasi  Tidak Terlupakan!! <span class="">🐟</span></p>
+                            <h6 class="card-subtitle mb-2">Pempek Palembang</h6>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 my-5">
+                    <div class="card mb-4 shadow">
+                        <img src="/img/Es Dawet.jpg" class="card-img-top" alt="Es Dawet">
+                        <div class="card-body">
+                            <p class="card-text">Kelezatan yang Menyegarkan, Sensasi Manis Gula Aren dan Kelapa yang Menggoda,
+                                 Es Dawet Siap Membuat Lidah Anda Menari! Nikmati Setiap Seruputannya yang Segar dan Lembut di Mulut.
+                                  Segera Rasakan Kesegarannya dan Nikmati Sensasi Khasnya yang Tidak Terlupakan! <span class="">🥥</span></p>
+                            <h6 class="card-subtitle mb-2">Es Dawet</h6>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 ">
+                    <div class="card mb-4 shadow">
+                        <img src="/img/Es Pisang Ijo.jpg" class="card-img-top" alt="Es Pisang Ijo">
+                        <div class="card-body">
+                            <p class="card-text">Kelezatan yang Menyegarkan, Sensasi Manis Pisang dan Saus Santan yang Menggoda,
+                                 Es Pisang Ijo Siap Membuat Lidah Anda Menari! Nikmati Setiap Gigitannya yang Lembut dan Segar. 
+                                 Segera Rasakan Kesegarannya dan Nikmati Sensasi Khasnya yang Tidak Terlupakan!! <span class="">🍌</span></p>
+                            <h6 class="card-subtitle mb-2">Es Pisang Ijo</h6>
+
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
             <div class="col-md-4 my-5 mx-auto">
