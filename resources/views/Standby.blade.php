@@ -27,6 +27,10 @@
             color: orange;
         }
 
+        .card-text:hover {
+        color: green;
+        }
+
         .card-img-top {
             transition: transform 0.2s;
         }
@@ -368,12 +372,12 @@
 
             </div>
             <div class="col-md-4 my-5 mx-auto">
-                <div class="card mb-4 shadow">
+                <div class="card mb-4 shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Share Foodpic..</h5>
-                        <p class="card-text">Dengan melalui Foodpic, kamu dapat membagikan berbagi macam kreasi
-                            keberhasilan dan
-                            pengalamanmu untuk resep yang sudah kamu coba di Kuresep Masak.</p>
+                        <h5 class="card-title text-center">✨ Share Your Foodpic! ✨ </h5>
+                        <p class="card-text">Bersiaplah untuk memamerkan keahlian memasakmu! Melalui <strong>Foodpic</strong>, 
+                            kamu bisa membagikan beragam kreasi lezat dan pengalaman seru dari resep-resep yang sudah kamu coba di <strong>Kuresep Masak</strong>. 
+                            Ayo, tunjukkan hasil masakanmu dan inspirasi yang lain!</p>
                     </div>
                 </div>
             </div>
