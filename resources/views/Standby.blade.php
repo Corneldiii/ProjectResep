@@ -247,6 +247,21 @@
                 </div>
             </div>
         </div>
+
+            <!-- Tambahan Artikel -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Coba Resep Terbaik dari Kuresep Masak</h5>
+                        <p class="card-text">Nikmati berbagai macam resep terbaik yang telah kami sediakan. Mulai dari
+                            makanan pembuka hingga makanan penutup, semua bisa Anda temukan di Kuresep Masak. Yuk, coba
+                            resep-resep favorit kami dan rasakan kelezatannya!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
