@@ -15,7 +15,7 @@
     <title>Kuresep Masak</title>
     <style>
         body {
-            background-image: url('/img/bg-web.png');
+            background-image: url('/img/bg---web.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -41,6 +41,17 @@
             color: #F0C29D;
             /* Warna kulit */   
         }
+
+        .custom-section {
+            text-align: center; /* Pusatkan gambar secara horizontal */
+            padding: 20px; /* Tambahkan padding untuk memberikan ruang sekitar gambar */
+        }
+        .custom-section img {
+            max-width: 30%; /* Gambar akan menyesuaikan lebar kontainer */
+            height: auto; /* Pertahankan rasio aspek gambar */
+            margin-left: 700px;
+        }
+
     </style>
 </head>
 
@@ -86,6 +97,9 @@
     @endif
 
 
+    <section class="custom-section">
+    <img src="/img/bakso_standby.png" alt="Bakso Standby">
+</section>
 
     <!-- Section Pembukaan -->
     <section class="pembukaan d-flex justify-content-center align-items-center mt-4 p-3">
