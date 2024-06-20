@@ -47,10 +47,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 50px;
+            padding: 10vh 5%;
         }
         .recipe-text {
-            max-width: 50%;
+            max-width: 45%;
             color: #000; /* Warna hitam untuk teks */
             font-family: 'Arial', sans-serif; /* Font utama */
         }
