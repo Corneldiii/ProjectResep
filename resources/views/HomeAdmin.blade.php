@@ -150,13 +150,13 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Favorite</a>
+                            <a class="nav-link" href="{{ route('favorite')  }}">Favorite</a>
                         </li>
                         <li>
                             <a class="nav-link" href="{{ route('tambahmenu') }}">Tambahkan menu kreasimu</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{ route('homeadmin') }}">Lihat daftar resep</a>
+                            <a class="nav-link" href="{{ route('home') }}">Lihat daftar resep</a>
                         </li>
                         <li>
                             <form action="{{ route('logout') }}" method="POST">
