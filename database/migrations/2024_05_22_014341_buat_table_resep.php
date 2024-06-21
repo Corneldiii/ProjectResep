@@ -17,8 +17,9 @@ return new class extends Migration
             $table ->  string('asal');
             $table ->  text('bahan');
             $table -> text('langkah');
-            $table -> string('foto')-> unique();
+            $table -> string('foto');
             $table->unsignedBigInteger('user_id');
+            $table ->  integer('jumlah_simpan') -> default(0);
             $table->foreign('user_id')->references('id_akun')->on('akun');
             $table -> timestamps();
         });

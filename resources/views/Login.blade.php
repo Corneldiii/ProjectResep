@@ -12,16 +12,19 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-end; /* Tetap berada di sebelah kanan */
+            align-items: flex-end;
+            /* Tetap berada di sebelah kanan */
             height: 100vh;
             background: url('/img/Login_1.png') no-repeat center center fixed;
             background-size: cover;
-            padding-right: 120px; /* Jarak dari tepi kanan */
+            padding-right: 120px;
+            /* Jarak dari tepi kanan */
         }
 
         .logo-container {
             margin-bottom: 20px;
-            margin-right: 70px; /* Sesuaikan jarak dengan kontainer login */
+            margin-right: 70px;
+            /* Sesuaikan jarak dengan kontainer login */
             text-align: center;
         }
 
@@ -40,6 +43,20 @@
 </head>
 
 <body>
+    @if (session('error'))
+        <div class="toast" style="position: fixed; top: 20px; right: 20px; z-index: 1050;">
+            <div class="toast-header">
+                <strong class="mr-auto">Pesan</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                {{ session('error') }}
+            </div>
+        </div>
+    @endif
+
     <div class="logo-container">
         <img src="/img/Logo.png" alt="Logo" class="img-fluid" style="max-width: 150px;">
     </div>
@@ -64,6 +81,11 @@
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.toast').toast('show');
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

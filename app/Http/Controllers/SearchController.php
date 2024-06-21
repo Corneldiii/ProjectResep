@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\resep;
+use App\Models\profil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -32,9 +33,16 @@ class SearchController extends Controller
             ->orWhere('favorit.status', 0)
             ->get();
 
+        $profil = profil::leftJoin('akun', function ($join) use ($id_akun) {
+            $join->on('akun.id_akun', '=', 'profil.user_id');
+        })
+            ->where('profil.user_id', $id_akun)
+            ->select('akun.username', 'profil.*')
+            ->first();
 
 
-        return view('/search', compact('data', 'cari'));
+
+        return view('/search', compact('data', 'cari','profil'));
     }
 
     /**
@@ -100,10 +108,17 @@ class SearchController extends Controller
                 $query->where('favorit.id_akun', $id_akun)
                     ->orWhereNull('favorit.id_fav');
             })
-            ->where('resep.asal','like','%' . $cari . '%')
+            ->where('resep.asal', 'like', '%' . $cari . '%')
             ->orWhere('favorit.status', 0)
             ->get();
 
-        return view('/search', compact('data','cari'));
+            $profil = profil::leftJoin('akun', function ($join) use ($id_akun){
+                $join->on('akun.id_akun', '=', 'profil.user_id');
+            })
+            ->where('profil.user_id', $id_akun)
+            ->select('akun.username','profil.*')
+            ->first();
+
+        return view('/search', compact('data', 'cari','profil'));
     }
 }

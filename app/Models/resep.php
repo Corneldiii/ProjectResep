@@ -11,15 +11,24 @@ class resep extends Model
 
     protected $table = "resep";
 
-    protected $fillable = ["nama","asal","bahan","langkah","foto","user_id"];
+    protected $primaryKey = 'id_resep';
+
+    protected $fillable = ["nama", "asal", "bahan", "langkah", "foto", "user_id"];
 
     public function favoritedByUsers()
     {
-        return $this->belongsToMany(akun::class, 'id_akun','user_id');
+        return $this->belongsToMany(akun::class, 'favorit', 'id_resep', 'id_akun')
+                    ->withPivot('status');
     }
 
+    // Relasi many-to-one dengan Akun (user yang mengirim resep)
     public function submittedByUser()
     {
-        return $this->belongsTo(fav::class, 'user_id');
+        return $this->belongsTo(akun::class, 'user_id');
+    }
+
+    public function favorit()
+    {
+        return $this->hasMany(fav::class, 'id_resep', 'id_resep');
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\daftar_resep;
 use App\Models\resep;
+use App\Models\profil;
+use App\Models\daftar_resep;
 use Illuminate\Http\Request;
 
 class InputResepController extends Controller
@@ -13,7 +14,15 @@ class InputResepController extends Controller
      */
     public function index()
     {
-        return view('/TambahMenu');
+        $id_akun = session('id_akun');
+
+        $profil = profil::leftJoin('akun', function ($join) use ($id_akun) {
+            $join->on('akun.id_akun', '=', 'profil.user_id');
+        })
+            ->where('profil.user_id', $id_akun)
+            ->select('akun.username', 'profil.*')
+            ->first();
+        return view('/TambahMenu',compact('profil'));
     }
 
     /**
@@ -56,7 +65,7 @@ class InputResepController extends Controller
             $fotoPath = null;
         }
 
-        
+
 
 
         $data = [
@@ -70,9 +79,9 @@ class InputResepController extends Controller
 
         // dd($data);
 
-        if($id_akun === 1){
+        if ($id_akun === 1) {
             resep::create($data);
-        }else{
+        } else {
             daftar_resep::create($data);
         }
         return redirect()->route('inputresep');

@@ -39,9 +39,12 @@ class SignupController extends Controller
             'password' => bcrypt($request-> input('password')),
         ];
 
+        
         // dd($data);
 
         akun::create($data);
+
+        
         return redirect()->route('login');
 
     }

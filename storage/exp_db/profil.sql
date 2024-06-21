@@ -1,0 +1,35 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+DROP TABLE IF EXISTS `profil`;
+CREATE TABLE `profil` (
+  `id_profil` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `foto_profil` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'img/FT_Profil/defaultPP.png',
+  `no_telp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '-',
+  `user_id` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id_profil`),
+  KEY `profil_user_id_foreign` (`user_id`),
+  CONSTRAINT `profil_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `akun` (`id_akun`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `profil` (`id_profil`, `foto_profil`, `no_telp`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'img/FT_Profil/1718615253.png', '084256734521', 2, '2024-06-16 14:55:45', '2024-06-17 09:07:33');
+INSERT INTO `profil` (`id_profil`, `foto_profil`, `no_telp`, `user_id`, `created_at`, `updated_at`) VALUES
+(2, 'img/FT_Profil/1718615134.png', '084759124635', 3, '2024-06-17 06:22:23', '2024-06-17 09:05:34');
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

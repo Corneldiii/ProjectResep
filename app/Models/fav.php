@@ -12,4 +12,9 @@ class fav extends Model
     protected $table = "favorit";
 
     protected $fillable = ["id_resep","id_akun","status"];
+
+    public function akun()
+    {
+        return $this->belongsTo(Akun::class, 'id_akun', 'id_akun');
+    }
 }

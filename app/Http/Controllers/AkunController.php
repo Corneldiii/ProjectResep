@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\akun;
+use App\Models\profil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
+use PHPUnit\Framework\Constraint\IsEmpty;
 
 class AkunController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index()
@@ -67,18 +70,31 @@ class AkunController extends Controller
     {
         $credentials = $request->only('email', 'password', 'id_akun');
 
-
         $user = akun::where('username', $credentials['email'])->first();
 
         if ($user && password_verify($credentials['password'], $user->password)) {
             $request->session()->put('id_akun', $user->id_akun);
-            if($user-> id_akun === 1){
-                return redirect()->route('homeadmin');
-            }else{
-                return redirect()->route('home');
+            $request->session()->put('action_completed', true);
+
+            $cekprofil = profil::where('user_id', $user->id_akun)->get();
+
+            if($cekprofil->count() == 0){
+                $profil = [
+                    'user_id' => $user -> id_akun,
+                ];
+
+                profil::create($profil);
+            }
+
+            $cookie = Cookie::make('user_id', $user -> id_akun, 10);
+
+            if ($user->id_akun === 1) {
+                return redirect()->route('homeadmin')->cookie($cookie);;
+            } else {
+                return redirect()->route('home')->cookie($cookie);;
             }
         } else {
-            dd($user);
+            return redirect()->route('login')->with('error', 'Email atau password salah.');
         }
     }
 }
